@@ -492,6 +492,13 @@ small {
   border-color: #004d40;
 }
 
+#modal-ai-content {
+  max-width: 780px;
+  width: 90% !important;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
 @media (min-width: 1200px) {
   #experience .container {
     width: 860px;
