@@ -546,7 +546,7 @@ small {
   .container {
     margin: 0 auto;
   }
-  nav.hide-on-large.only.trigger {
+  nav.hide-on-large-only.trigger {
     display: block;
     position: fixed;
     top: 0;
