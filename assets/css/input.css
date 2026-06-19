@@ -1,0 +1,270 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+/* ---- Profile pic ---- */
+.profile-pic {
+  border: 6px solid rgba(0, 77, 64, 0.4);
+}
+
+/* ---- Hero section ---- */
+#intro {
+  background: linear-gradient(135deg, #0d1117 0%, #004d40 55%, #00695c 100%);
+}
+
+/* ---- Icon buttons (social links) ---- */
+.icon-btn {
+  width: 50px;
+  height: 50px;
+  border: 0;
+  font-size: 30px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 4px;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  cursor: pointer;
+}
+
+.icon-btn:hover {
+  transform: scale(1.1);
+  color: #fff;
+}
+
+.icon-btn.github { color: #000; }
+.icon-btn.github:hover { background-color: #000; }
+.icon-btn.linkedin { color: #0077b5; }
+.icon-btn.linkedin:hover { background-color: #0077b5; }
+
+/* ---- Skill pills ---- */
+.skill-pill {
+  display: inline-block;
+  padding: 6px 16px;
+  background: #e0f2f1;
+  color: #004d40;
+  border-radius: 24px;
+  font-size: 13px;
+  font-weight: 500;
+  border: 1.5px solid #b2dfdb;
+  transition: all 0.2s ease;
+  cursor: default;
+}
+
+.skill-pill:hover {
+  background: #004d40;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 77, 64, 0.3);
+  border-color: #004d40;
+}
+
+.dark .skill-pill {
+  background: #1a3a35;
+  color: #a7ffeb;
+  border-color: #004d40;
+}
+
+.dark .skill-pill:hover {
+  background: #004d40;
+  color: #fff;
+}
+
+/* ---- Buttons ---- */
+.btn-outline {
+  display: inline-block;
+  padding: 11px 35px;
+  background: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 1px;
+  border-radius: 5px;
+  transition: all 0.2s ease;
+}
+
+.btn-outline:hover {
+  color: #00796b;
+  background-color: #fff;
+}
+
+.btn-solid {
+  display: inline-block;
+  padding: 11px 35px;
+  background: #fff;
+  color: #00796b;
+  border: 2px solid #fff;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 1px;
+  border-radius: 5px;
+  transition: all 0.2s ease;
+}
+
+.btn-solid:hover {
+  background: rgba(255, 255, 255, 0.85);
+}
+
+/* ---- Modals ---- */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 50;
+  display: none;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.modal-overlay.open { display: flex; }
+
+@media (min-width: 768px) {
+  .modal-overlay { align-items: center; }
+}
+
+.modal-window {
+  background: #fff;
+  width: 100%;
+  max-width: 780px;
+  max-height: 90vh;
+  overflow-y: auto;
+  border-radius: 16px 16px 0 0;
+  animation: modalSlideUp 0.3s ease;
+}
+
+@media (min-width: 768px) {
+  .modal-window {
+    border-radius: 16px;
+    animation: modalFadeIn 0.3s ease;
+  }
+}
+
+.dark .modal-window {
+  background: #1e1e1e;
+  color: #e0e0e0;
+}
+
+@keyframes modalSlideUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+@keyframes modalFadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.modal-window::-webkit-scrollbar { width: 6px; }
+.modal-window::-webkit-scrollbar-thumb { background: #ccc; border-radius: 3px; }
+
+/* ---- Filter buttons ---- */
+.filter-btn {
+  padding: 6px 18px;
+  border-radius: 24px;
+  font-size: 13px;
+  font-weight: 500;
+  border: 1.5px solid #b2dfdb;
+  color: #004d40;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter-btn:hover {
+  background: #e0f2f1;
+}
+
+.filter-btn.active {
+  background: #004d40;
+  color: #fff;
+  border-color: #004d40;
+}
+
+.dark .filter-btn {
+  color: #a7ffeb;
+  border-color: #004d40;
+}
+
+.dark .filter-btn:hover {
+  background: #1a3a35;
+}
+
+.dark .filter-btn.active {
+  background: #004d40;
+  color: #fff;
+}
+
+/* ---- Project cards ---- */
+.project-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+}
+
+.project-card.hidden-card {
+  display: none;
+}
+
+/* ---- Section title underline ---- */
+.section-title {
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: #008073;
+  border-radius: 2px;
+}
+
+/* ---- Dark mode body ---- */
+.dark {
+  background: #121212;
+  color: #e0e0e0;
+}
+
+.dark .bg-white { background-color: #1e1e1e !important; }
+.dark .bg-gray-50 { background-color: #121212 !important; }
+.dark .text-gray-600 { color: #b0b0b0 !important; }
+.dark .text-gray-700 { color: #c0c0c0 !important; }
+.dark .text-gray-800 { color: #e0e0e0 !important; }
+.dark .border { border-color: #333 !important; }
+.dark .border-gray-200 { border-color: #333 !important; }
+.dark .shadow-lg { box-shadow: 0 10px 15px -3px rgba(0,0,0,0.4) !important; }
+.dark .shadow-md { box-shadow: 0 4px 6px -1px rgba(0,0,0,0.4) !important; }
+.dark .hover\:shadow-xl:hover { box-shadow: 0 20px 25px -5px rgba(0,0,0,0.5) !important; }
+
+.dark .nav-link.active {
+  background-color: #1a1a2e !important;
+}
+
+.dark hr {
+  border-color: #333;
+}
+
+/* ---- Page load animation ---- */
+body:not(.loaded) .project-card {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* ---- Misc ---- */
+html {
+  scroll-behavior: smooth;
+}
