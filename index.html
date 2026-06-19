@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 
 <head>
   <meta charset="utf-8" />
@@ -7,30 +7,50 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
   <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-PGZH8HT');</script>
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+      var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+      j.async = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-PGZH8HT');</script>
   <!-- End Google Tag Manager -->
 
-  <!-- Materialize - Compiled and minified CSS -->
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/css/materialize.min.css" />
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            teal: {
+              50: '#e0f2f1', 100: '#b2dfdb', 200: '#80cbc4', 300: '#4db6ac',
+              400: '#26a69a', 500: '#009688', 600: '#00897b', 700: '#00796b',
+              800: '#00695c', 900: '#004d40',
+            }
+          },
+          fontFamily: { sans: ['Inter', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+
   <!-- Font Awesome 6 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <!-- AOS - Animate On Scroll -->
+  <!-- AOS -->
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
   <!-- Custom Styles -->
   <link rel="stylesheet" href="/assets/css/style.css" />
+
   <title>Joan Njoroge | Software Developer</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-126939217-2"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
-    gtag('config', 'UA-126939217-2');
+    gtag('config', 'G-XXXXXXXXXX');
   </script>
 
   <!-- Open Graph -->
@@ -41,15 +61,15 @@
   <meta property="og:url" content="https://kafura0.github.io/" />
   <meta property="og:site_name" content="Joan Njoroge | Software Developer" />
   <meta property="article:publisher" content="https://kafura0.github.io/" />
-  <meta property="og:image" content="https://kafura0.github.io/examples/preview.JPG" />
+  <meta property="og:image" content="https://kafura0.github.io/assets/img/ecomm_proj.png" />
   <!-- Twitter -->
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:site" content="#" />
+  <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Joan Njoroge | Software Developer" />
   <meta name="twitter:description" content="Software Developer specialising in backend development and machine learning." />
-  <meta name="twitter:url" content="https://twitter.com/joan_njoroge" />
+  <meta name="twitter:image" content="https://kafura0.github.io/assets/img/ecomm_proj.png" />
   <meta name="author" content="Joan Njoroge" />
   <meta name="description" content="Software Developer with a passion for backend development and machine learning." />
+  <!-- Favicon -->
   <link rel="apple-touch-icon" sizes="57x57" href="/assets/img/favicon/apple-icon-57x57.png" />
   <link rel="apple-touch-icon" sizes="60x60" href="/assets/img/favicon/apple-icon-60x60.png" />
   <link rel="apple-touch-icon" sizes="72x72" href="/assets/img/favicon/apple-icon-72x72.png" />
@@ -71,452 +91,440 @@
   <meta name="google-site-verification" content="_qxK8tePiU2fhnwlwnJ7pkDFnj1k2EiKq_cYGy1Cb84" />
 </head>
 
-<body>
+<body class="bg-gray-50 text-gray-800">
+
   <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PGZH8HT"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe>
-  </noscript>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PGZH8HT" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
 
-  <!-- Navigation Menu -->
-  <!-- Nav class 1 -->
-  <nav class="hide-on-small-only">
-    <ul class="side-nav fixed section table-of-contents">
+  <!-- ===== Dark Mode Toggle ===== -->
+  <button id="darkToggle" aria-label="Toggle dark mode"
+    class="fixed bottom-6 right-6 z-50 w-12 h-12 rounded-full bg-teal-800 text-white shadow-lg flex items-center justify-center hover:bg-teal-700 transition-colors">
+    <i class="fas fa-moon"></i>
+  </button>
 
-      <li class="logo">
-        <a id="logo-container" aria-label="Navigate to the beginning of the page" href="#intro"
-          class="brand-logo grey-blue-text">
-          <img src="/assets/img/pic.jpg" class="circle img-responsive profile-pic" alt="avatar">
-        </a>
-      </li>
-
-      <li class="bold">
-        <a aria-label="Navigate to the About section" href="#about" class="waves-effect waves-dark teal-text"><i
-            class="mdi-social-person small"></i><span>About</span></a>
-      </li>
-      <li class="bold">
-        <a aria-label="Navigate to the Experience section" href="#experience"
-          class="waves-effect waves-dark teal-text"><i
-            class="mdi-action-trending-up small"></i><span>Experience</span></a>
-      </li>
-      <li class="bold">
-        <a aria-label="Navigate to the Projects section" href="#projects" class="waves-effect waves-dark teal-text"><i
-            class="mdi-av-my-library-books small"></i><span>Projects</span></a>
-      </li>
-      <li class="bold">
-        <a aria-label="Navigate to the Certifications section" href="#certificates" class="waves-effect waves-dark teal-text"><i
-            class="mdi-av-web small"></i><span>Certifications</span></a>
-      </li>
-      <li class="bold">
-        <a aria-label="Navigate to the Skills section" href="#skills" class="waves-effect waves-dark teal-text"><i
-            class="mdi-action-assessment small"></i><span>Skills</span></a>
-      </li>
-      <li class="bold">
-        <a aria-label="Navigate to the Education section" href="#education" class="waves-effect waves-dark teal-text"><i
-            class="mdi-social-school small"></i><span>Education</span></a>
-      </li>
-      <li class="bold">
-        <a aria-label="Navigate to the Contact section" href="#contact" class="waves-effect waves-dark teal-text"><i
-            class="mdi-content-mail small"></i><span>Contact</span></a>
-      </li>
-      <li class="bold">
-        <a aria-label="Open Joan's resume in a new tab" href="https://kafura0.github.io/assets/resume/Joan%20K%20Njoroge%20CV.pdf" target="_blank"
-          class="waves-effect waves-dark teal-text"><i class="mdi-file-folder-open small"></i><span>Resume</span></a>
-      </li>
-    </ul>
-  </nav>
-
-  <!-- Nav class 2 -->
-  <nav class="hide-on-large-only trigger z-depth-1">
-    <a aria-label="Toggle visibility of the mobile navbar" href="#" data-activates="slide-out"
-      class="button-collapse"><i class="mdi-navigation-menu"></i></a>
-    <div class="name-title">
-      <a id="name" aria-label="Navigate to the beginning of the page" href="#" class="teal-text">Joan K Njoroge</a><span class="black-text">Software Developer</span>
+  <!-- ===== Desktop Sidebar ===== -->
+  <aside id="sidebar"
+    class="hidden lg:flex flex-col fixed left-0 top-0 h-screen w-48 bg-white shadow-lg z-40 border-r border-gray-200">
+    <div class="p-6 text-center border-b border-gray-200">
+      <img src="/assets/img/pic.jpg" class="w-20 h-20 rounded-full mx-auto profile-pic" alt="Joan Njoroge" />
+      <span class="block mt-2 font-semibold text-sm text-gray-700">Joan K Njoroge</span>
     </div>
-  </nav>
+    <nav class="flex-1 overflow-y-auto py-2">
+      <a href="#about"
+        class="nav-link flex items-center gap-3 px-5 py-3 text-sm text-teal-700 hover:bg-gray-50 transition-colors">
+        <i class="fas fa-user w-4 text-center"></i><span>About</span>
+      </a>
+      <a href="#experience"
+        class="nav-link flex items-center gap-3 px-5 py-3 text-sm text-teal-700 hover:bg-gray-50 transition-colors">
+        <i class="fas fa-chart-line w-4 text-center"></i><span>Experience</span>
+      </a>
+      <a href="#projects"
+        class="nav-link flex items-center gap-3 px-5 py-3 text-sm text-teal-700 hover:bg-gray-50 transition-colors">
+        <i class="fas fa-book w-4 text-center"></i><span>Projects</span>
+      </a>
+      <a href="#certificates"
+        class="nav-link flex items-center gap-3 px-5 py-3 text-sm text-teal-700 hover:bg-gray-50 transition-colors">
+        <i class="fas fa-globe w-4 text-center"></i><span>Certifications</span>
+      </a>
+      <a href="#skills"
+        class="nav-link flex items-center gap-3 px-5 py-3 text-sm text-teal-700 hover:bg-gray-50 transition-colors">
+        <i class="fas fa-tasks w-4 text-center"></i><span>Skills</span>
+      </a>
+      <a href="#education"
+        class="nav-link flex items-center gap-3 px-5 py-3 text-sm text-teal-700 hover:bg-gray-50 transition-colors">
+        <i class="fas fa-school w-4 text-center"></i><span>Education</span>
+      </a>
+      <a href="#contact"
+        class="nav-link flex items-center gap-3 px-5 py-3 text-sm text-teal-700 hover:bg-gray-50 transition-colors">
+        <i class="fas fa-envelope w-4 text-center"></i><span>Contact</span>
+      </a>
+      <hr class="my-2 mx-4 border-gray-200" />
+      <a href="https://kafura0.github.io/assets/resume/Joan%20K%20Njoroge%20CV.pdf" target="_blank"
+        class="flex items-center gap-3 px-5 py-3 text-sm text-teal-700 hover:bg-gray-50 transition-colors">
+        <i class="fas fa-folder-open w-4 text-center"></i><span>Resume</span>
+      </a>
+    </nav>
+  </aside>
 
-  <!-- Nav class 3 -->
-  <nav class="hide-on-large-only">
-    <ul id="slide-out" class="side-nav">
-      <li class="bold">
-        <a aria-label="Navigate to the About section" href="#about" class="waves-effect waves-dark teal-text"><i
-            class="mdi-social-person small"></i><span>About</span></a>
-      </li>
-      <li class="bold">
-        <a aria-label="Navigate to the Experience section" href="#experience"
-          class="waves-effect waves-dark teal-text"><i
-            class="mdi-action-trending-up small"></i><span>Experience</span></a>
-      </li>
-      <li class="bold">
-        <a aria-label="Navigate to the Projects section" href="#projects" class="waves-effect waves-dark teal-text"><i
-            class="mdi-av-my-library-books small"></i><span>Projects</span></a>
-      </li>
-      <li class="bold">
-        <a aria-label="Navigate to the Certifications section" href="#certificates" class="waves-effect waves-dark teal-text"><i
-            class="mdi-av-web small"></i><span>Certifications</span></a>
-      </li>
-      <li class="bold">
-        <a aria-label="Navigate to the Skills section" href="#skills" class="waves-effect waves-dark teal-text"><i
-            class="mdi-action-assessment small"></i><span>Skills</span></a>
-      </li>
-      <li class="bold">
-        <a aria-label="Navigate to the Education section" href="#education" class="waves-effect waves-dark teal-text"><i
-            class="mdi-social-school small"></i><span>Education</span></a>
-      </li>
-      <li class="bold">
-        <a aria-label="Navigate to the Contact section" href="#contact" class="waves-effect waves-dark teal-text"><i
-            class="mdi-content-mail small"></i><span>Contact</span></a>
-      </li>
-      <li class="bold">
-        <a aria-label="Open Joan's resume in a new tab"
-          href="https://kafura0.github.io/assets/resume/Joan%20K%20Njoroge%20CV.pdf" target="_blank"
-          class="waves-effect waves-dark teal-text"><i class="mdi-file-folder-open small"></i><span>Resume</span></a>
-      </li>
-    </ul>
-  </nav>
+  <!-- ===== Mobile Header ===== -->
+  <header class="lg:hidden fixed top-0 left-0 right-0 bg-white shadow z-40 border-b border-gray-200">
+    <div class="flex items-center justify-between px-4 h-16">
+      <a href="#intro" class="text-teal-700 font-semibold text-lg">Joan K Njoroge</a>
+      <div class="flex items-center gap-2">
+        <span class="text-sm text-gray-500">Software Developer</span>
+        <button id="menuToggle" aria-label="Toggle menu" class="text-teal-700 text-2xl p-2">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
 
-  <!-- Main Content -->
-  <main>
-    <!-- Hero Section -->
-    <section id="intro" class="section scrollspy full-height">
-      <div class="overlay"></div>
-      <div class="container">
-        <div>
-          <div class="content section-padding valign" style="margin-left: 10%; margin-top: 50px;">
-            <div class="caption">
-              <h2>Hi, I'm <span class="teal">Joan K Njoroge</span></h2>
-              <h5 style="color:#fff">A <span class="typing" style="font-weight: 300; color:#a7ffeb"></span></h5>
-              <h5>A self-driven, quick self-starter and passionate programmer with a curious mind who enjoys solving complex, challenging real-world problems.</h5>
-            </div>
-            <div class="social">
-              <a href="https://www.linkedin.com/in/joan-knjoroge/" target="_blank">
-                <button class="icon-btn linkedin">
-                  <i class="fab fa-linkedin"></i>
-                </button>
-              </a>
-              <a href="https://github.com/kafura0/" target="_blank">
-                <button class="icon-btn github">
-                  <i class="fab fa-github"></i>
-                </button>
-              </a>
-            </div>
-            <div class='buttons'>
-              <a href="#about" class="readme">Read More</a>
-              <a href="#contact" class="contactme">Contact Me</a>
-            </div>
+  <!-- ===== Mobile Overlay ===== -->
+  <div id="mobileMenu" class="fixed inset-0 z-50 hidden">
+    <div id="menuOverlay" class="absolute inset-0 bg-black/50"></div>
+    <div class="absolute top-0 right-0 w-64 h-full bg-white shadow-xl p-6">
+      <button id="menuClose" aria-label="Close menu" class="absolute top-4 right-4 text-2xl text-gray-500">
+        <i class="fas fa-times"></i>
+      </button>
+      <div class="mt-8 space-y-1">
+        <a href="#about" class="mobile-link block px-4 py-3 text-teal-700 hover:bg-gray-50 rounded">About</a>
+        <a href="#experience" class="mobile-link block px-4 py-3 text-teal-700 hover:bg-gray-50 rounded">Experience</a>
+        <a href="#projects" class="mobile-link block px-4 py-3 text-teal-700 hover:bg-gray-50 rounded">Projects</a>
+        <a href="#certificates" class="mobile-link block px-4 py-3 text-teal-700 hover:bg-gray-50 rounded">Certifications</a>
+        <a href="#skills" class="mobile-link block px-4 py-3 text-teal-700 hover:bg-gray-50 rounded">Skills</a>
+        <a href="#education" class="mobile-link block px-4 py-3 text-teal-700 hover:bg-gray-50 rounded">Education</a>
+        <a href="#contact" class="mobile-link block px-4 py-3 text-teal-700 hover:bg-gray-50 rounded">Contact</a>
+        <hr class="my-3 border-gray-200" />
+        <a href="https://kafura0.github.io/assets/resume/Joan%20K%20Njoroge%20CV.pdf" target="_blank"
+          class="block px-4 py-3 text-teal-700 hover:bg-gray-50 rounded">Resume</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Main Content ===== -->
+  <main class="lg:ml-48 pt-16 lg:pt-0">
+
+    <!-- ===== Hero ===== -->
+    <section id="intro" class="min-h-screen flex items-center relative overflow-hidden">
+      <div class="absolute inset-0 bg-black/30"></div>
+      <div class="container mx-auto px-6 relative z-10 text-white">
+        <div data-aos="fade-up">
+          <h2 class="text-3xl md:text-5xl font-light mb-4">Hi, I'm <span class="bg-teal-700 px-3 py-1">Joan K Njoroge</span></h2>
+          <h5 class="text-xl md:text-2xl font-light mb-6">A <span class="typing font-light text-teal-200"></span></h5>
+          <p class="text-lg max-w-2xl leading-relaxed opacity-90">
+            A self-driven, quick self-starter and passionate programmer with a curious mind who enjoys solving complex, challenging real-world problems.
+          </p>
+          <div class="flex gap-3 mt-8">
+            <a href="https://www.linkedin.com/in/joan-knjoroge/" target="_blank" aria-label="LinkedIn"
+              class="icon-btn linkedin"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://github.com/kafura0/" target="_blank" aria-label="GitHub"
+              class="icon-btn github"><i class="fab fa-github"></i></a>
+          </div>
+          <div class="flex flex-wrap gap-4 mt-8">
+            <a href="#about" class="btn-solid">Read More</a>
+            <a href="#contact" class="btn-outline">Contact Me</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- About -->
-    <section id="about" class="section scrollspy">
-      <h3 class="page-title white-text teal" data-aos="fade-down">About</h3>
-      <div class="container flow-text" data-aos="fade-up">
+    <!-- ===== About ===== -->
+    <section id="about" class="py-20 scroll-mt-20">
+      <h3 class="section-title text-center text-2xl font-light uppercase tracking-widest mb-16" data-aos="fade-down">
+        About Me</h3>
+      <div class="container mx-auto px-6 max-w-4xl text-lg leading-relaxed text-gray-700 space-y-4" data-aos="fade-up">
         <p>
-          Computer Science graduate from the University of Nottingham, specialising in Artificial Intelligence.
-          Currently building automation systems and data infrastructure at JOAT Kenya — designing pipelines, integrating APIs, and developing full-stack platforms that cut manual workload and surface business insights.
+          I am a passionate and innovative Automation Specialist, Prompt Engineer, Web Developer, and Game &amp; App
+          Developer focused on building intelligent digital solutions that combine creativity, functionality, and modern
+          AI technologies. With a strong background in software development and artificial intelligence, I specialize in
+          creating scalable applications, automation systems, and AI-powered workflows that improve efficiency and user
+          experience.
         </p>
         <p>
-          My work spans the full data lifecycle: engineering scalable backends with Python and Django, building Power BI and Tableau dashboards, and applying ML where it has measurable operational impact.
-          I also teach Python and JavaScript at Smart Brains Kenya, guiding students through building real-world systems.
+          My expertise spans full-stack web development, AI integration, prompt engineering, API development, and
+          interactive application design. I have hands-on experience working with advanced AI platforms and tools
+          including Claude, Gemini, Codex, ChatGPT, and OpenRouter to develop intelligent systems, automate complex
+          tasks, and accelerate software development processes.
         </p>
         <p>
-          Looking for a role at the intersection of data engineering, automation, and backend development — somewhere I can keep building things that make a measurable difference.
+          I work with modern technologies and frameworks such as Python, JavaScript, React, Node.js, Django, Streamlit,
+          REST APIs, Firebase, GitHub, and cloud-based development environments. I am also experienced in automation
+          workflows, web scraping, NLP projects, analytics systems, and AI-assisted development.
+        </p>
+        <p>
+          Beyond development, I am deeply interested in emerging technologies, problem-solving, and building impactful
+          digital experiences. Whether it's developing responsive websites, intelligent automation systems, business
+          tools, games, or AI-driven applications, I aim to deliver solutions that are efficient, scalable, and
+          user-centered.
+        </p>
+        <p>
+          I thrive in fast-evolving environments, continuously learning and adapting to new technologies while bringing
+          creativity, technical precision, and innovation to every project I work on.
         </p>
       </div>
     </section>
 
-    <!-- Experience -->
-    <section id="experience" class="section scrollspy">
-      <h3 class="page-title white-text teal" data-aos="fade-down">Experience</h3>
-      <div class="container">
+    <!-- ===== Experience ===== -->
+    <section id="experience" class="py-20 scroll-mt-20 bg-white">
+      <h3 class="section-title text-center text-2xl font-light uppercase tracking-widest mb-16" data-aos="fade-down">
+        Experience</h3>
+      <div class="container mx-auto px-6 max-w-4xl space-y-8">
 
-        <div class="card" data-aos="fade-up">
-          <div class="card-content">
-            <p><span class="card-title teal-text"><a href="https://joatkenya.com" target="_blank" class="teal-text hoverline">JOAT Kenya</a></span></p>
-            <div class="role brown-text text-darken-2">Automation &amp; Data Systems Developer &middot; Project-Based</div>
-            <ul>
-              <li>Designed and implemented automation-first systems to streamline business operations and reduce manual intervention.</li>
-              <li>Built data pipelines for collecting, processing, and analysing business and marketing data.</li>
-              <li>Reduced manual processing time by 40%+ through workflow automation across 10+ client workflows.</li>
-              <li>Developed full-stack platforms supporting service delivery, operations, and client management.</li>
-              <li>Built and deployed the company website — <a href="https://joatkenya.com" target="_blank" class="hoverline">joatkenya.com</a>.</li>
-              <li>Created Power BI and Tableau dashboards to enhance visibility and decision-making.</li>
-              <li>Integrated APIs for real-time automated data flow; built social media automation systems improving engagement by 30%+.</li>
-              <li><b>Tools:</b> Python, Django, DRF, Next.js, PostgreSQL, Redis, Celery, Power BI, Tableau, REST APIs</li>
-            </ul>
+        <div class="border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition" data-aos="fade-up">
+          <div class="flex items-start justify-between flex-wrap gap-2 mb-3">
+            <a href="https://joatkenya.com" target="_blank"
+              class="text-teal-700 font-semibold text-xl hover:underline">JOAT Kenya</a>
+            <span class="text-amber-800 text-sm font-medium bg-amber-50 px-3 py-1 rounded-full">Automation &amp; Data
+              Systems Developer</span>
           </div>
-          <div class="card-action">
-            <span>2024 – Present | Nairobi, Kenya</span>
-          </div>
+          <ul class="space-y-2 text-gray-600 text-sm md:text-base ml-4 list-disc">
+            <li>Designed and implemented automation-first systems to streamline business operations and reduce manual
+              intervention.</li>
+            <li>Built data pipelines for collecting, processing, and analysing business and marketing data.</li>
+            <li>Reduced manual processing time by 40%+ through workflow automation across 10+ client workflows.</li>
+            <li>Developed full-stack platforms supporting service delivery, operations, and client management.</li>
+            <li>Built and deployed the company website — <a href="https://joatkenya.com" target="_blank"
+                class="text-teal-700 hover:underline">joatkenya.com</a>.</li>
+            <li>Created Power BI and Tableau dashboards to enhance visibility and decision-making.</li>
+            <li>Integrated APIs for real-time automated data flow; built social media automation systems improving
+              engagement by 30%+.</li>
+            <li><b>Tools:</b> Python, Django, DRF, Next.js, PostgreSQL, Redis, Celery, Power BI, Tableau, REST APIs</li>
+          </ul>
+          <div class="mt-4 text-sm text-gray-400 border-t border-gray-100 pt-3">2024 – Present &middot; Nairobi, Kenya</div>
         </div>
 
-        <div class="card" data-aos="fade-up" data-aos-delay="50">
-          <div class="card-content">
-            <p><span class="card-title teal-text">Smart Brains Kenya</span></p>
-            <div class="role brown-text text-darken-2">Web Development &amp; Robotics Instructor</div>
-            <ul>
-              <li>Teach Python and JavaScript with a focus on building real-world, production-grade systems.</li>
-              <li>Guide students in developing structured, logic-based applications and web projects.</li>
-              <li><b>Tools:</b> Python, JavaScript, HTML/CSS</li>
-            </ul>
+        <div class="border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition" data-aos="fade-up"
+          data-aos-delay="50">
+          <div class="flex items-start justify-between flex-wrap gap-2 mb-3">
+            <span class="text-teal-700 font-semibold text-xl">Smart Brains Kenya</span>
+            <span class="text-amber-800 text-sm font-medium bg-amber-50 px-3 py-1 rounded-full">Web Development &amp;
+              Robotics Instructor</span>
           </div>
-          <div class="card-action">
-            <span>2024 – Present | Nairobi, Kenya</span>
-          </div>
+          <ul class="space-y-2 text-gray-600 text-sm md:text-base ml-4 list-disc">
+            <li>Teach Python and JavaScript with a focus on building real-world, production-grade systems.</li>
+            <li>Guide students in developing structured, logic-based applications and web projects.</li>
+            <li><b>Tools:</b> Python, JavaScript, HTML/CSS</li>
+          </ul>
+          <div class="mt-4 text-sm text-gray-400 border-t border-gray-100 pt-3">2024 – Present &middot; Nairobi, Kenya</div>
         </div>
 
-        <div class="card" data-aos="fade-up" data-aos-delay="75">
-          <div class="card-content">
-            <p><span class="card-title teal-text">International Strategy Centre</span></p>
-            <div class="role brown-text text-darken-2">Administrative Assistant / Secretary</div>
-            <ul>
-              <li>Coordinated data collection and reporting processes to support organisational operations.</li>
-              <li>Maintained structured records and documentation systems.</li>
-            </ul>
+        <div class="border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition" data-aos="fade-up"
+          data-aos-delay="75">
+          <div class="flex items-start justify-between flex-wrap gap-2 mb-3">
+            <span class="text-teal-700 font-semibold text-xl">International Strategy Centre</span>
+            <span class="text-amber-800 text-sm font-medium bg-amber-50 px-3 py-1 rounded-full">Administrative
+              Assistant</span>
           </div>
-          <div class="card-action">
-            <span>2021 – 2022 | Nairobi, Kenya</span>
-          </div>
+          <ul class="space-y-2 text-gray-600 text-sm md:text-base ml-4 list-disc">
+            <li>Coordinated data collection and reporting processes to support organisational operations.</li>
+            <li>Maintained structured records and documentation systems.</li>
+          </ul>
+          <div class="mt-4 text-sm text-gray-400 border-t border-gray-100 pt-3">2021 – 2022 &middot; Nairobi, Kenya</div>
         </div>
 
-        <div class="card" data-aos="fade-up" data-aos-delay="90">
-          <div class="card-content">
-            <p><span class="card-title teal-text">Oran Collections</span></p>
-            <div class="role brown-text text-darken-2">Sales Manager</div>
-            <ul>
-              <li>Managed inventory systems and sales reporting processes.</li>
-              <li>Improved operational efficiency through structured data tracking and reporting.</li>
-            </ul>
+        <div class="border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition" data-aos="fade-up"
+          data-aos-delay="90">
+          <div class="flex items-start justify-between flex-wrap gap-2 mb-3">
+            <span class="text-teal-700 font-semibold text-xl">Oran Collections</span>
+            <span class="text-amber-800 text-sm font-medium bg-amber-50 px-3 py-1 rounded-full">Sales Manager</span>
           </div>
-          <div class="card-action">
-            <span>2019 – 2021 | Nairobi, Kenya</span>
-          </div>
+          <ul class="space-y-2 text-gray-600 text-sm md:text-base ml-4 list-disc">
+            <li>Managed inventory systems and sales reporting processes.</li>
+            <li>Improved operational efficiency through structured data tracking and reporting.</li>
+          </ul>
+          <div class="mt-4 text-sm text-gray-400 border-t border-gray-100 pt-3">2019 – 2021 &middot; Nairobi, Kenya</div>
         </div>
 
-        <div class="card" data-aos="fade-up" data-aos-delay="100">
-          <div class="card-content">
-            <div class="row">
-              <div class="col s12 m2">
-                <a href="https://www.microlise.com/" target="_blank"><img alt="Microlise logo"
-                    src="/assets/img/exp-microlise.jpg" class="responsive-img center-block" /></a>
-              </div>
-              <div class="col s12 m10">
-                <p>
-                  <span class="card-title"><a href="https://www.microlise.com/" target="_blank"
-                      class="teal-text hoverline">Microlise Telematics</a></span>
-                </p>
-              </div>
+        <div class="border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition" data-aos="fade-up"
+          data-aos-delay="100">
+          <div class="flex items-center gap-4 mb-3">
+            <a href="https://www.microlise.com/" target="_blank">
+              <img src="/assets/img/exp-microlise.jpg" alt="Microlise" class="h-12 w-auto" />
+            </a>
+            <div>
+              <a href="https://www.microlise.com/" target="_blank"
+                class="text-teal-700 font-semibold text-xl hover:underline">Microlise Telematics</a>
+              <span class="block text-amber-800 text-sm font-medium">Project Trainee</span>
             </div>
-            <div class="role brown-text text-darken-2">Project Trainee</div>
-            <ul>
-              <li>Research and development to build an Advanced Driver Assistance System for safety and monitoring driving behaviour of fleet drivers using novel solutions.</li>
-              <li>The final model was able to work in light and dark situations with an accuracy of 98%.</li>
-              <li>The system was well suited to the needs of a telematics or fleet management company, ensuring safety of drivers and fleet, enabling the company to monitor and schedule workers based on their hypovigilance.</li>
-              <li><b>Tools:</b> Python, Caffe, Docker, PyTorch, Flask</li>
-            </ul>
           </div>
-          <div class="card-action">
-            <span>September 2018 – May 2019 | Nottingham, United Kingdom</span>
-          </div>
+          <ul class="space-y-2 text-gray-600 text-sm md:text-base ml-4 list-disc">
+            <li>Research and development to build an Advanced Driver Assistance System for safety and monitoring driving
+              behaviour of fleet drivers using novel solutions.</li>
+            <li>The final model was able to work in light and dark situations with an accuracy of 98%.</li>
+            <li>The system was well suited to the needs of a telematics or fleet management company, ensuring safety of
+              drivers and fleet, enabling the company to monitor and schedule workers based on their hypovigilance.</li>
+            <li><b>Tools:</b> Python, Caffe, Docker, PyTorch, Flask</li>
+          </ul>
+          <div class="mt-4 text-sm text-gray-400 border-t border-gray-100 pt-3">September 2018 – May 2019 &middot;
+            Nottingham, United Kingdom</div>
         </div>
 
-        <div class="card" data-aos="fade-up" data-aos-delay="150">
-          <div class="card-content">
-            <div class="row">
-              <div class="col s12 m2">
-                <a href="https://www.cropsforthefuture.org/" target="_blank"><img alt="Crops for the Future logo"
-                    src="/assets/img/exp-cffrc.jpg" class="responsive-img center-block" /></a>
-              </div>
-              <div class="col s12 m10">
-                <p>
-                  <span class="card-title"><a href="https://www.cropsforthefuture.org/" target="_blank"
-                      class="teal-text hoverline">Crops for the Future</a></span>
-                </p>
-              </div>
+        <div class="border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition" data-aos="fade-up"
+          data-aos-delay="150">
+          <div class="flex items-center gap-4 mb-3">
+            <a href="https://www.cropsforthefuture.org/" target="_blank">
+              <img src="/assets/img/exp-cffrc.jpg" alt="Crops for the Future" class="h-12 w-auto" />
+            </a>
+            <div>
+              <a href="https://www.cropsforthefuture.org/" target="_blank"
+                class="text-teal-700 font-semibold text-xl hover:underline">Crops for the Future</a>
+              <span class="block text-amber-800 text-sm font-medium">Project Trainee</span>
             </div>
-            <div class="role brown-text text-darken-2">Project Trainee</div>
-            <ul>
-              <li>
-                Monitored crop health using satellite images collected from USGS Landsat 8. Pre-processed TIFF files
-                through GIS techniques to extract spectral bands, then compared and displayed them on a website,
-                charting vegetation index changes over time.
-                The product is useful in monitoring urbanisation, global warming, desertification, and famine/drought.
-              </li>
-              <li><b>Tools:</b> ArcGIS, USGS, Remote Sensing, JavaScript</li>
-            </ul>
           </div>
-          <div class="card-action">
-            <span>September 2017 – September 2018 | Semenyih, Malaysia</span>
-          </div>
+          <ul class="space-y-2 text-gray-600 text-sm md:text-base ml-4 list-disc">
+            <li>Monitored crop health using satellite images collected from USGS Landsat 8. Pre-processed TIFF files
+              through GIS techniques to extract spectral bands, then compared and displayed them on a website, charting
+              vegetation index changes over time. The product is useful in monitoring urbanisation, global warming,
+              desertification, and famine/drought.</li>
+            <li><b>Tools:</b> ArcGIS, USGS, Remote Sensing, JavaScript</li>
+          </ul>
+          <div class="mt-4 text-sm text-gray-400 border-t border-gray-100 pt-3">September 2017 – September 2018 &middot;
+            Semenyih, Malaysia</div>
         </div>
 
       </div>
     </section>
 
-    <!-- Projects -->
-    <section id="projects" class="section scrollspy">
-      <h3 class="page-title white-text teal" data-aos="fade-down">Projects</h3>
-      <div class="container">
-        <div class="row">
+    <!-- ===== Projects ===== -->
+    <section id="projects" class="py-20 scroll-mt-20">
+      <h3 class="section-title text-center text-2xl font-light uppercase tracking-widest mb-12" data-aos="fade-down">
+        Projects</h3>
+      <div class="container mx-auto px-6 max-w-6xl">
+
+        <!-- Filter Buttons -->
+        <div id="filters" class="flex flex-wrap justify-center gap-2 mb-10" data-aos="fade-up">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="python">Python</button>
+          <button class="filter-btn" data-filter="django">Django</button>
+          <button class="filter-btn" data-filter="ml">ML/AI</button>
+          <button class="filter-btn" data-filter="frontend">Frontend</button>
+          <button class="filter-btn" data-filter="devops">DevOps</button>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
           <!-- PROJECTS:AUTO:START -->
           <!-- PROJECTS:AUTO:END -->
 
-          <div class="col s12 m6 l4" data-aos="fade-up">
-            <div class="card medium">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img alt="Joat Stores" src="/assets/img/ecomm_proj.png"
-                style="height: 100%; width: 100%" />
-              </div>
-              <div class="card-content">
-                <span class="card-title teal-text">Joat Stores</span>
-                <p>Self-hosted multi-tenant commerce OS — independent storefronts per merchant, M-Pesa payments, and modules for retail, restaurants, bars &amp; contracting.</p>
-              </div>
-              <div class="card-action">
-                <a href="#modal-joat-stores" class="modal-trigger btn-floating btn-large waves-effect waves-light teal tooltipped"
-                  data-position="top" data-tooltip="Details" aria-label="View details"><i class="fas fa-expand-alt"></i></a>
-                <a href="https://github.com/kafura0/joat_stores" target="_blank"
-                  class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"
-                  data-position="top" data-tooltip="View Source" aria-label="View source on GitHub"><i class="fab fa-github"></i></a>
-              </div>
+          <!-- Joat Stores -->
+          <div class="project-card bg-white rounded-xl shadow-md overflow-hidden border border-gray-200"
+            data-aos="fade-up" data-tags="python,django,frontend,devops">
+            <img src="/assets/img/ecomm_proj.png" alt="Joat Stores" class="h-48 w-full object-cover" />
+            <div class="p-5">
+              <h4 class="text-teal-700 font-semibold text-lg">Joat Stores</h4>
+              <p class="text-gray-600 text-sm mt-2 leading-relaxed">
+                Self-hosted multi-tenant commerce OS — independent storefronts per merchant, M-Pesa payments, and modules
+                for retail, restaurants, bars &amp; contracting.
+              </p>
+            </div>
+            <div class="px-5 pb-5 flex gap-2">
+              <button data-modal="modal-joat-stores"
+                class="modal-trigger w-10 h-10 rounded-full bg-teal-600 text-white flex items-center justify-center hover:bg-teal-700 transition">
+                <i class="fas fa-expand-alt text-sm"></i>
+              </button>
+              <a href="https://github.com/kafura0/joat_stores" target="_blank"
+                class="w-10 h-10 rounded-full bg-gray-500 text-white flex items-center justify-center hover:bg-gray-600 transition">
+                <i class="fab fa-github"></i>
+              </a>
             </div>
           </div>
 
-          <div class="col s12 m6 l4" data-aos="fade-up" data-aos-delay="100">
-            <div class="card medium">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img alt="AI Content Engine" src="/assets/img/projects/ai_content_engine_thumbnail.jpg"
-                style="height: 100%; width: 100%" />
-              </div>
-              <div class="card-content">
-                <span class="card-title teal-text">AI Content Engine</span>
-                <p>Multi-client social media engine — brand-consistent posts with AI text &amp; images instantly.</p>
-              </div>
-              <div class="card-action">
-                <a href="#modal-ai-content" class="modal-trigger btn-floating btn-large waves-effect waves-light teal tooltipped"
-                  data-position="top" data-tooltip="Details" aria-label="View details"><i class="fas fa-expand-alt"></i></a>
-                <a href="https://sl1nk.com/rzcbshd" target="_blank"
-                  class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"
-                  data-position="top" data-tooltip="View Live" aria-label="View project online"><i class="fas fa-external-link"></i></a>
-              </div>
+          <!-- AI Content Engine -->
+          <div class="project-card bg-white rounded-xl shadow-md overflow-hidden border border-gray-200"
+            data-aos="fade-up" data-aos-delay="100" data-tags="python,ml,frontend">
+            <img src="/assets/img/projects/ai_content_engine_thumbnail.jpg" alt="AI Content Engine"
+              class="h-48 w-full object-cover" />
+            <div class="p-5">
+              <h4 class="text-teal-700 font-semibold text-lg">AI Content Engine</h4>
+              <p class="text-gray-600 text-sm mt-2 leading-relaxed">
+                Multi-client social media engine — brand-consistent posts with AI text &amp; images instantly.
+              </p>
+            </div>
+            <div class="px-5 pb-5 flex gap-2">
+              <button data-modal="modal-ai-content"
+                class="modal-trigger w-10 h-10 rounded-full bg-teal-600 text-white flex items-center justify-center hover:bg-teal-700 transition">
+                <i class="fas fa-expand-alt text-sm"></i>
+              </button>
+              <a href="https://sl1nk.com/rzcbshd" target="_blank"
+                class="w-10 h-10 rounded-full bg-gray-500 text-white flex items-center justify-center hover:bg-gray-600 transition">
+                <i class="fas fa-external-link-alt text-sm"></i>
+              </a>
             </div>
           </div>
 
-          <div class="col s12 m6 l4" data-aos="fade-up" data-aos-delay="200">
-            <div class="card medium">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img alt="n8n CMS and Social Media Automation" src="/assets/img/minimal-ai-wallpaper.jpg"
-                style="height: 100%; width: 100%" />
-              </div>
-              <div class="card-content">
-                <span class="card-title teal-text">n8n CMS &amp; Social Automation</span>
-                <p>Manage website content and social media via Telegram — AI parses natural-language messages into structured CMS updates and social posts.</p>
-              </div>
-              <div class="card-action">
-                <a href="#modal-n8n" class="modal-trigger btn-floating btn-large waves-effect waves-light teal tooltipped"
-                  data-position="top" data-tooltip="Details" aria-label="View details"><i class="fas fa-expand-alt"></i></a>
-                <a href="https://github.com/kafura0/n8n_CMS_SMA" target="_blank"
-                  class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"
-                  data-position="top" data-tooltip="View Source" aria-label="View source on GitHub"><i class="fab fa-github"></i></a>
-              </div>
+          <!-- n8n CMS & Social Automation -->
+          <div class="project-card bg-white rounded-xl shadow-md overflow-hidden border border-gray-200"
+            data-aos="fade-up" data-aos-delay="200" data-tags="python,devops">
+            <img src="/assets/img/minimal-ai-wallpaper.jpg" alt="n8n CMS and Social Media Automation"
+              class="h-48 w-full object-cover" />
+            <div class="p-5">
+              <h4 class="text-teal-700 font-semibold text-lg">n8n CMS &amp; Social Automation</h4>
+              <p class="text-gray-600 text-sm mt-2 leading-relaxed">
+                Manage website content and social media via Telegram — AI parses natural-language messages into
+                structured CMS updates and social posts.
+              </p>
+            </div>
+            <div class="px-5 pb-5 flex gap-2">
+              <button data-modal="modal-n8n"
+                class="modal-trigger w-10 h-10 rounded-full bg-teal-600 text-white flex items-center justify-center hover:bg-teal-700 transition">
+                <i class="fas fa-expand-alt text-sm"></i>
+              </button>
+              <a href="https://github.com/kafura0/n8n_CMS_SMA" target="_blank"
+                class="w-10 h-10 rounded-full bg-gray-500 text-white flex items-center justify-center hover:bg-gray-600 transition">
+                <i class="fab fa-github"></i>
+              </a>
             </div>
           </div>
 
-          <div class="col s12 m6 l4" data-aos="fade-up" data-aos-delay="300">
-            <div class="card medium">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img alt="BI Platform — AI-Powered Business Intelligence SaaS" src="/assets/img/futuristic-wallpaper.jpg"
-                style="height: 100%; width: 100%" />
-              </div>
-              <div class="card-content">
-                <span class="card-title teal-text">BI Platform</span>
-                <p>AI-powered multi-tenant SaaS — upload data, auto-generate dashboards, and query insights with natural language.</p>
-              </div>
-              <div class="card-action">
-                <a href="#modal-bi-platform" class="modal-trigger btn-floating btn-large waves-effect waves-light teal tooltipped"
-                  data-position="top" data-tooltip="Details" aria-label="View details"><i class="fas fa-expand-alt"></i></a>
-                <a href="https://github.com/kafura0/BI_app" target="_blank"
-                  class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"
-                  data-position="top" data-tooltip="View Source" aria-label="View source on GitHub"><i class="fab fa-github"></i></a>
-              </div>
+          <!-- BI Platform -->
+          <div class="project-card bg-white rounded-xl shadow-md overflow-hidden border border-gray-200"
+            data-aos="fade-up" data-aos-delay="300" data-tags="python,ml,frontend,devops">
+            <img src="/assets/img/futuristic-wallpaper.jpg" alt="BI Platform" class="h-48 w-full object-cover" />
+            <div class="p-5">
+              <h4 class="text-teal-700 font-semibold text-lg">BI Platform</h4>
+              <p class="text-gray-600 text-sm mt-2 leading-relaxed">
+                AI-powered multi-tenant SaaS — upload data, auto-generate dashboards, and query insights with natural
+                language.
+              </p>
+            </div>
+            <div class="px-5 pb-5 flex gap-2">
+              <button data-modal="modal-bi-platform"
+                class="modal-trigger w-10 h-10 rounded-full bg-teal-600 text-white flex items-center justify-center hover:bg-teal-700 transition">
+                <i class="fas fa-expand-alt text-sm"></i>
+              </button>
+              <a href="https://github.com/kafura0/BI_app" target="_blank"
+                class="w-10 h-10 rounded-full bg-gray-500 text-white flex items-center justify-center hover:bg-gray-600 transition">
+                <i class="fab fa-github"></i>
+              </a>
             </div>
           </div>
 
-          <div class="col s12 m6 l4" data-aos="fade-up" data-aos-delay="400">
-            <div class="card medium">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img alt="Student attention and cheating detection" src="/assets/img/adas_drowsiness.jpg" style="height: 100%; width: 100%" class="activator" />
-              </div>
-              <div class="card-content">
-                <span class="card-title activator teal-text hoverline">Student Attention Detection<i
-                    class="mdi-navigation-more-vert right"></i></span>
-                <p>Real-time multi-student monitoring system that tracks attention levels and flags potential cheating using computer vision.</p>
-              </div>
-              <div class="card-reveal">
-                <span class="card-title teal-text"><small>Details</small><i
-                    class="mdi-navigation-close right"></i></span>
-                <ul>
-                  <li><b>Tools:</b> MediaPipe, OpenCV, Streamlit, Python</li>
-                  <li>Monitors 10+ faces simultaneously via webcam or uploaded video.</li>
-                  <li>Tracks eye closure (fatigue), head gaze direction, and motion (fidgeting).</li>
-                  <li>Live labels — Attentive, Drowsy, Looking Away — with CSV session export.</li>
-                  <li>Deployed on Hugging Face Spaces.</li>
-                </ul>
-                <p style="margin-top:12px;margin-bottom:4px;"><b>Future Plans</b></p>
-                <ul>
-                  <li>Facial recognition for per-student identity tracking across sessions.</li>
-                  <li>Audio analysis to detect off-topic conversations.</li>
-                  <li>Remote teacher dashboard with live session alerts.</li>
-                  <li>LMS integration (Moodle, Google Classroom) for automated attendance logging.</li>
-                </ul>
-                <div class="card-action">
-                  <a aria-label="View project online" href="https://github.com/kafura0/attention-detection/" target="_blank" data-position="top"
-                    data-tooltip="View Online"
-                    class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-                      class="fas fa-external-link"></i></a>
-                  <a aria-label="View source on GitHub" href="https://github.com/kafura0/attention-detection"
-                    target="_blank" data-position="top" data-tooltip="View Source"
-                    class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-                      class="fab fa-github"></i></a>
-                </div>
-              </div>
+          <!-- Student Attention Detection -->
+          <div class="project-card bg-white rounded-xl shadow-md overflow-hidden border border-gray-200"
+            data-aos="fade-up" data-aos-delay="400" data-tags="python,ml">
+            <img src="/assets/img/adas_drowsiness.jpg" alt="Student attention and cheating detection"
+              class="h-48 w-full object-cover" />
+            <div class="p-5">
+              <h4 class="text-teal-700 font-semibold text-lg">Student Attention Detection</h4>
+              <p class="text-gray-600 text-sm mt-2 leading-relaxed">
+                Real-time multi-student monitoring system that tracks attention levels and flags potential cheating using
+                computer vision.
+              </p>
+            </div>
+            <div class="px-5 pb-5 flex gap-2">
+              <button data-modal="modal-attention"
+                class="modal-trigger w-10 h-10 rounded-full bg-teal-600 text-white flex items-center justify-center hover:bg-teal-700 transition">
+                <i class="fas fa-expand-alt text-sm"></i>
+              </button>
+              <a href="https://github.com/kafura0/attention-detection/" target="_blank"
+                class="w-10 h-10 rounded-full bg-gray-500 text-white flex items-center justify-center hover:bg-gray-600 transition">
+                <i class="fab fa-github"></i>
+              </a>
             </div>
           </div>
 
-          <div class="col s12 m6 l4" data-aos="fade-up" data-aos-delay="500">
-            <div class="card medium">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img alt="NLP classification" src="/assets/img/NLP-image-scaled.jpg"
-                style="height: 100%; width: 100%" class="activator" />
-              </div>
-              <div class="card-content">
-                <span class="card-title activator teal-text hoverline">NLP Text Classification<i
-                    class="mdi-navigation-more-vert right"></i></span>
-                <p>Classifies 20 Newsgroups forum posts into topic categories using iterative feature engineering and TF-IDF.</p>
-              </div>
-              <div class="card-reveal">
-                <span class="card-title teal-text"><small>Details</small><i
-                    class="mdi-navigation-close right"></i></span>
-                <ul>
-                  <li><b>Tools:</b> Python, scikit-learn, NLTK, TF-IDF</li>
-                  <li>5 categories: computing, hockey, sales, cryptography, politics.</li>
-                  <li>Baseline MultinomialNB classifier; improved via stopword removal, stemming, and custom feature engineering (price detection, sentence counts).</li>
-                  <li>Final pipeline evaluated on held-out data with confusion matrix analysis.</li>
-                </ul>
-                <p style="margin-top:12px;margin-bottom:4px;"><b>Future Plans</b></p>
-                <ul>
-                  <li>Replace TF-IDF with BERT embeddings for context-aware classification.</li>
-                  <li>Expand to all 20 newsgroup categories with multi-label support.</li>
-                  <li>Wrap the model in a REST API for real-time post classification.</li>
-                  <li>Add an interactive demo UI for live text input and predictions.</li>
-                </ul>
-                <div class="card-action">
-                  <a aria-label="View source on GitHub" href="https://github.com/kafura0/dsc-nlp-lab"
-                    target="_blank" data-position="top" data-tooltip="View Source"
-                    class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-                      class="fab fa-github"></i></a>
-                </div>
-              </div>
+          <!-- NLP Classification -->
+          <div class="project-card bg-white rounded-xl shadow-md overflow-hidden border border-gray-200"
+            data-aos="fade-up" data-aos-delay="500" data-tags="python,ml">
+            <img src="/assets/img/NLP-image-scaled.jpg" alt="NLP classification"
+              class="h-48 w-full object-cover" />
+            <div class="p-5">
+              <h4 class="text-teal-700 font-semibold text-lg">NLP Text Classification</h4>
+              <p class="text-gray-600 text-sm mt-2 leading-relaxed">
+                Classifies 20 Newsgroups forum posts into topic categories using iterative feature engineering and
+                TF-IDF.
+              </p>
+            </div>
+            <div class="px-5 pb-5 flex gap-2">
+              <button data-modal="modal-nlp"
+                class="modal-trigger w-10 h-10 rounded-full bg-teal-600 text-white flex items-center justify-center hover:bg-teal-700 transition">
+                <i class="fas fa-expand-alt text-sm"></i>
+              </button>
+              <a href="https://github.com/kafura0/dsc-nlp-lab" target="_blank"
+                class="w-10 h-10 rounded-full bg-gray-500 text-white flex items-center justify-center hover:bg-gray-600 transition">
+                <i class="fab fa-github"></i>
+              </a>
             </div>
           </div>
 
@@ -524,76 +532,54 @@
       </div>
     </section>
 
-    <!-- Certifications -->
-    <section id="certificates" class="section scrollspy">
-      <h3 class="page-title white-text teal" data-aos="fade-down">Certifications</h3>
-      <div class="container">
-        <div class="row">
+    <!-- ===== Certifications ===== -->
+    <section id="certificates" class="py-20 scroll-mt-20 bg-white">
+      <h3 class="section-title text-center text-2xl font-light uppercase tracking-widest mb-16" data-aos="fade-down">
+        Certifications</h3>
+      <div class="container mx-auto px-6 max-w-6xl">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-          <div class="col s12 m6 l4" data-aos="fade-up">
-            <div class="card medium">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img alt="Computer Vision in Python certificate" src="/assets/img/udemy_selfdriving.png" style="height: 100%; width: 100%" class="activator" />
-              </div>
-              <div class="card-content">
-                <span class="card-title activator teal-text hoverline">Computer Vision in Python<i
-                    class="mdi-navigation-more-vert right"></i></span>
-                <p>Deep learning algorithms and computer vision for self-driving car applications.</p>
-              </div>
-              <div class="card-reveal">
-                <span class="card-title grey-text"><small>Accomplishments</small><i
-                    class="mdi-navigation-close right"></i></span>
-                <ul>
-                  <li><b>Tools:</b> OpenCV, Keras, TensorFlow, Artificial Neural Networks</li>
-                  <li>Object and lane detection</li>
-                  <li>Traffic sign classification for self-driving cars</li>
-                </ul>
-              </div>
+          <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-200" data-aos="fade-up">
+            <img src="/assets/img/udemy_selfdriving.png" alt="Computer Vision in Python certificate"
+              class="h-48 w-full object-cover" />
+            <div class="p-5">
+              <h4 class="text-teal-700 font-semibold text-lg">Computer Vision in Python</h4>
+              <p class="text-gray-600 text-sm mt-2">Deep learning algorithms and computer vision for self-driving car
+                applications.</p>
+            </div>
+            <div class="px-5 pb-5">
+              <button data-modal="modal-cert-cv"
+                class="modal-trigger text-teal-700 text-sm font-medium hover:underline">Details &rarr;</button>
             </div>
           </div>
 
-          <div class="col s12 m6 l4" data-aos="fade-up" data-aos-delay="100">
-            <div class="card medium">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img alt="Machine Learning A-Z certificate" src="/assets/img/udemy_ml%20A-Z.png" style="height: 100%; width: 100%" class="activator" />
-              </div>
-              <div class="card-content">
-                <span class="card-title activator teal-text hoverline">Machine Learning A-Z<i
-                    class="mdi-navigation-more-vert right"></i></span>
-                <p>A theoretical and practical course on machine learning algorithms in Python and R.</p>
-              </div>
-              <div class="card-reveal">
-                <span class="card-title grey-text"><small>Accomplishments</small><i
-                    class="mdi-navigation-close right"></i></span>
-                <ul>
-                  <li><b>Tools:</b> Python, R, scikit-learn, NumPy, Pandas</li>
-                  <li>Covered supervised and unsupervised ML algorithms including regression, classification, clustering, and dimensionality reduction.</li>
-                  <li>Implemented models in both Python and R with hands-on practical exercises.</li>
-                </ul>
-              </div>
+          <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-200" data-aos="fade-up"
+            data-aos-delay="100">
+            <img src="/assets/img/udemy_ml%20A-Z.png" alt="Machine Learning A-Z certificate"
+              class="h-48 w-full object-cover" />
+            <div class="p-5">
+              <h4 class="text-teal-700 font-semibold text-lg">Machine Learning A-Z</h4>
+              <p class="text-gray-600 text-sm mt-2">A theoretical and practical course on machine learning algorithms in
+                Python and R.</p>
+            </div>
+            <div class="px-5 pb-5">
+              <button data-modal="modal-cert-ml"
+                class="modal-trigger text-teal-700 text-sm font-medium hover:underline">Details &rarr;</button>
             </div>
           </div>
 
-          <div class="col s12 m6 l4" data-aos="fade-up" data-aos-delay="200">
-            <div class="card medium">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img alt="Python and Django Full Stack Developer certificate" src="/assets/img/udemy_PyDjWebDev.png"
-                style="height: 100%; width: 100%" class="activator" />
-              </div>
-              <div class="card-content">
-                <span class="card-title activator teal-text hoverline">Python and Django Full Stack Developer<i
-                    class="mdi-navigation-more-vert right"></i></span>
-                <p>An in-depth course on Python and the Django web development framework.</p>
-              </div>
-              <div class="card-reveal">
-                <span class="card-title teal-text"><small>Accomplishments</small><i
-                    class="mdi-navigation-close right"></i></span>
-                <ul>
-                  <li><b>Tools:</b> HTML, CSS, Bootstrap, Django, Flask, SQLAlchemy, PostgreSQL, Python</li>
-                  <li>Built a blog platform where users can view posts and contact the admin.</li>
-                  <li>Admin can add, update and delete posts.</li>
-                </ul>
-              </div>
+          <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-200" data-aos="fade-up"
+            data-aos-delay="200">
+            <img src="/assets/img/udemy_PyDjWebDev.png" alt="Python and Django Full Stack Developer certificate"
+              class="h-48 w-full object-cover" />
+            <div class="p-5">
+              <h4 class="text-teal-700 font-semibold text-lg">Python and Django Full Stack Developer</h4>
+              <p class="text-gray-600 text-sm mt-2">An in-depth course on Python and the Django web development
+                framework.</p>
+            </div>
+            <div class="px-5 pb-5">
+              <button data-modal="modal-cert-django"
+                class="modal-trigger text-teal-700 text-sm font-medium hover:underline">Details &rarr;</button>
             </div>
           </div>
 
@@ -601,14 +587,15 @@
       </div>
     </section>
 
-    <!-- Skills -->
-    <section id="skills" class="section scrollspy">
-      <h3 class="page-title white-text teal" data-aos="fade-down">Skills</h3>
-      <div class="container">
+    <!-- ===== Skills ===== -->
+    <section id="skills" class="py-20 scroll-mt-20">
+      <h3 class="section-title text-center text-2xl font-light uppercase tracking-widest mb-16" data-aos="fade-down">
+        Skills</h3>
+      <div class="container mx-auto px-6 max-w-5xl">
 
-        <div class="skill-group" data-aos="fade-up">
-          <h4 class="skill-group-title">Languages &amp; Databases</h4>
-          <div class="skill-pills">
+        <div class="mb-10" data-aos="fade-up">
+          <h4 class="text-amber-800 font-medium text-lg border-b border-gray-200 pb-3 mb-5">Languages &amp; Databases</h4>
+          <div class="flex flex-wrap gap-2">
             <span class="skill-pill">Python</span>
             <span class="skill-pill">JavaScript</span>
             <span class="skill-pill">TypeScript</span>
@@ -624,9 +611,9 @@
           </div>
         </div>
 
-        <div class="skill-group" data-aos="fade-up" data-aos-delay="100">
-          <h4 class="skill-group-title">ML / Data Science Libraries</h4>
-          <div class="skill-pills">
+        <div class="mb-10" data-aos="fade-up" data-aos-delay="100">
+          <h4 class="text-amber-800 font-medium text-lg border-b border-gray-200 pb-3 mb-5">ML / Data Science Libraries</h4>
+          <div class="flex flex-wrap gap-2">
             <span class="skill-pill">NumPy</span>
             <span class="skill-pill">Pandas</span>
             <span class="skill-pill">Scikit-Learn</span>
@@ -643,9 +630,9 @@
           </div>
         </div>
 
-        <div class="skill-group" data-aos="fade-up" data-aos-delay="150">
-          <h4 class="skill-group-title">Frameworks &amp; Backend</h4>
-          <div class="skill-pills">
+        <div class="mb-10" data-aos="fade-up" data-aos-delay="150">
+          <h4 class="text-amber-800 font-medium text-lg border-b border-gray-200 pb-3 mb-5">Frameworks &amp; Backend</h4>
+          <div class="flex flex-wrap gap-2">
             <span class="skill-pill">Django</span>
             <span class="skill-pill">Django REST Framework</span>
             <span class="skill-pill">Next.js</span>
@@ -656,9 +643,9 @@
           </div>
         </div>
 
-        <div class="skill-group" data-aos="fade-up" data-aos-delay="200">
-          <h4 class="skill-group-title">Tools &amp; Platforms</h4>
-          <div class="skill-pills">
+        <div data-aos="fade-up" data-aos-delay="200">
+          <h4 class="text-amber-800 font-medium text-lg border-b border-gray-200 pb-3 mb-5">Tools &amp; Platforms</h4>
+          <div class="flex flex-wrap gap-2">
             <span class="skill-pill">Git</span>
             <span class="skill-pill">Docker</span>
             <span class="skill-pill">AWS</span>
@@ -674,126 +661,123 @@
       </div>
     </section>
 
-    <!-- Education -->
-    <section id="education" class="section scrollspy">
-      <h3 class="page-title white-text teal" data-aos="fade-down">Education</h3>
-      <div class="container">
-        <div class="row">
-          <div class="col s12 m6 l4" data-aos="fade-up">
-            <div class="card">
-              <div class="card-content">
-                <p>
-                  <span class="card-title"><a href="https://www.nottingham.ac.uk/ugstudy/course/Computer-Science-with-Artificial-Intelligence-BSc" target="_blank" class="teal-text hoverline">University of Nottingham</a></span>
-                </p>
-                <p class="brown-text">Nottingham, UK</p>
-                <p>
-                  <b>Degree:</b> BSc (Hons) Computer Science with Artificial Intelligence
-                </p>
-                <ul>
-                  <p><b>Relevant Coursework:</b></p>
-                  <ul>
-                    <li>Data Structures and Algorithms</li>
-                    <li>Database Management Systems</li>
-                    <li>Operating Systems</li>
-                    <li>Machine Learning</li>
-                    <li>Computer Vision</li>
-                  </ul>
-                </ul>
-              </div>
+    <!-- ===== Education ===== -->
+    <section id="education" class="py-20 scroll-mt-20 bg-white">
+      <h3 class="section-title text-center text-2xl font-light uppercase tracking-widest mb-16" data-aos="fade-down">
+        Education</h3>
+      <div class="container mx-auto px-6 max-w-6xl">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+          <div class="border border-gray-200 rounded-xl p-6 shadow-sm" data-aos="fade-up">
+            <a href="https://www.nottingham.ac.uk/ugstudy/course/Computer-Science-with-Artificial-Intelligence-BSc"
+              target="_blank" class="text-teal-700 font-semibold text-lg hover:underline">University of Nottingham</a>
+            <p class="text-amber-800 text-sm mt-1">Nottingham, UK</p>
+            <p class="text-sm mt-2"><b>Degree:</b> BSc (Hons) Computer Science with AI</p>
+            <div class="mt-3 text-sm text-gray-600 space-y-1">
+              <p class="font-medium">Relevant Coursework:</p>
+              <ul class="list-disc ml-4 space-y-0.5">
+                <li>Data Structures and Algorithms</li>
+                <li>Database Management Systems</li>
+                <li>Operating Systems</li>
+                <li>Machine Learning</li>
+                <li>Computer Vision</li>
+              </ul>
             </div>
           </div>
 
-          <div class="col s12 m6 l4" data-aos="fade-up" data-aos-delay="100">
-            <div class="card">
-              <div class="card-content">
-                <p>
-                  <span class="card-title"><span class="teal-text">Moringa School</span></span>
-                </p>
-                <p class="brown-text">Nairobi, Kenya</p>
-                <p><b>Programme:</b> Data Science</p>
-                <ul>
-                  <p><b>Relevant Coursework:</b></p>
-                  <ul>
-                    <li>Data Analysis &amp; Visualisation</li>
-                    <li>Machine Learning</li>
-                    <li>Statistical Modelling</li>
-                    <li>SQL &amp; Database Management</li>
-                  </ul>
-                </ul>
-              </div>
+          <div class="border border-gray-200 rounded-xl p-6 shadow-sm" data-aos="fade-up" data-aos-delay="100">
+            <span class="text-teal-700 font-semibold text-lg">Moringa School</span>
+            <p class="text-amber-800 text-sm mt-1">Nairobi, Kenya</p>
+            <p class="text-sm mt-2"><b>Programme:</b> Data Science</p>
+            <div class="mt-3 text-sm text-gray-600 space-y-1">
+              <p class="font-medium">Relevant Coursework:</p>
+              <ul class="list-disc ml-4 space-y-0.5">
+                <li>Data Analysis &amp; Visualisation</li>
+                <li>Machine Learning</li>
+                <li>Statistical Modelling</li>
+                <li>SQL &amp; Database Management</li>
+              </ul>
             </div>
           </div>
 
-          <div class="col s12 m6 l4" data-aos="fade-up" data-aos-delay="150">
-            <div class="card">
-              <div class="card-content">
-                <p>
-                  <span class="card-title"><a href="https://www.nottingham.edu.my/ugstudy/course/foundation-in-science" target="_blank" class="teal-text hoverline">University of Nottingham Malaysia</a></span>
-                </p>
-                <p class="brown-text">Selangor, Malaysia</p>
-                <p>
-                  <b>Degree:</b> Foundation in Mathematics and Engineering
-                </p>
-                <ul>
-                  <p><b>Relevant Coursework:</b></p>
-                  <ul>
-                    <li>Mathematics 1, 2, 3, 4</li>
-                    <li>Communications and Networks</li>
-                    <li>Fundamentals of Computing</li>
-                    <li>Fundamentals of Programming</li>
-                  </ul>
-                </ul>
-              </div>
+          <div class="border border-gray-200 rounded-xl p-6 shadow-sm" data-aos="fade-up" data-aos-delay="150">
+            <a href="https://www.nottingham.edu.my/ugstudy/course/foundation-in-science" target="_blank"
+              class="text-teal-700 font-semibold text-lg hover:underline">University of Nottingham Malaysia</a>
+            <p class="text-amber-800 text-sm mt-1">Selangor, Malaysia</p>
+            <p class="text-sm mt-2"><b>Degree:</b> Foundation in Mathematics and Engineering</p>
+            <div class="mt-3 text-sm text-gray-600 space-y-1">
+              <p class="font-medium">Relevant Coursework:</p>
+              <ul class="list-disc ml-4 space-y-0.5">
+                <li>Mathematics 1, 2, 3, 4</li>
+                <li>Communications and Networks</li>
+                <li>Fundamentals of Computing</li>
+                <li>Fundamentals of Programming</li>
+              </ul>
             </div>
           </div>
+
         </div>
       </div>
     </section>
 
-    <!-- Contact -->
-    <section id="contact" class="section scrollspy full-height">
-      <h3 class="page-title white-text teal" data-aos="fade-down">Contact</h3>
-      <div class="container" data-aos="fade-up">
-        <p>
-          <a aria-label="Call Joan" href="tel:+254745071010" data-position="top" data-tooltip="Call Joan"
-            class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i class="fas fa-phone"></i></a><a
-              aria-label="Call Joan" href="tel:+254745071010"> +254 745 071 010</a>
-        </p>
-        <p>
-          <a aria-label="Email Joan" href="mailto:kabura.n.joan@gmail.com" target="_blank" data-position="top"
-            data-tooltip="Email Joan" class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-              class="fas fa-envelope"></i></a><a aria-label="Email Joan" href="mailto:kabura.n.joan@gmail.com"
-              class="hoverline">kabura.n.joan@gmail.com</a>
-        </p>
-        <p>
-          <a aria-label="View Joan on GitHub" href="https://github.com/kafura0" target="_blank"
-            data-position="top" data-tooltip="View Joan on GitHub"
-            class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i class="fab fa-github"></i></a><a
-              aria-label="Joan on GitHub" href="https://github.com/kafura0" class="hoverline"
-              target="_blank">github.com/kafura0</a>
-        </p>
-        <p>
-          <a aria-label="View Joan on LinkedIn" href="https://www.linkedin.com/in/joan-knjoroge/" target="_blank"
-            data-position="top" data-tooltip="View Joan on LinkedIn"
-            class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-              class="fab fa-linkedin"></i></a><a aria-label="Joan on LinkedIn" href="https://www.linkedin.com/in/joan-knjoroge/"
-              class="hoverline" target="_blank">linkedin.com/in/joan-knjoroge</a>
-        </p>
+    <!-- ===== Contact ===== -->
+    <section id="contact" class="py-20 scroll-mt-20">
+      <h3 class="section-title text-center text-2xl font-light uppercase tracking-widest mb-16" data-aos="fade-down">
+        Contact</h3>
+      <div class="container mx-auto px-6 max-w-lg space-y-6" data-aos="fade-up">
+        <div class="flex items-center gap-4">
+          <a href="tel:+254745071010" aria-label="Phone"
+            class="w-12 h-12 rounded-full bg-gray-500 text-white flex items-center justify-center hover:bg-gray-600 transition flex-shrink-0">
+            <i class="fas fa-phone"></i>
+          </a>
+          <a href="tel:+254745071010" class="text-teal-700 hover:underline">+254 745 071 010</a>
+        </div>
+        <div class="flex items-center gap-4">
+          <a href="mailto:kabura.n.joan@gmail.com" aria-label="Email"
+            class="w-12 h-12 rounded-full bg-gray-500 text-white flex items-center justify-center hover:bg-gray-600 transition flex-shrink-0">
+            <i class="fas fa-envelope"></i>
+          </a>
+          <a href="mailto:kabura.n.joan@gmail.com" class="text-teal-700 hover:underline">kabura.n.joan@gmail.com</a>
+        </div>
+        <div class="flex items-center gap-4">
+          <a href="https://github.com/kafura0" target="_blank" aria-label="GitHub"
+            class="w-12 h-12 rounded-full bg-gray-500 text-white flex items-center justify-center hover:bg-gray-600 transition flex-shrink-0">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://github.com/kafura0" target="_blank" class="text-teal-700 hover:underline">github.com/kafura0</a>
+        </div>
+        <div class="flex items-center gap-4">
+          <a href="https://www.linkedin.com/in/joan-knjoroge/" target="_blank" aria-label="LinkedIn"
+            class="w-12 h-12 rounded-full bg-gray-500 text-white flex items-center justify-center hover:bg-gray-600 transition flex-shrink-0">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/joan-knjoroge/" target="_blank"
+            class="text-teal-700 hover:underline">linkedin.com/in/joan-knjoroge</a>
+        </div>
       </div>
     </section>
+
   </main>
 
+  <!-- ===== Modals ===== -->
+
   <!-- AI Content Engine Modal -->
-  <div id="modal-ai-content" class="modal modal-fixed-footer">
-    <div class="modal-content" style="padding:0">
-      <img src="/assets/img/projects/ai_content_engine_thumbnail.jpg" alt="AI Content Engine"
-        style="width:100%;display:block;max-height:380px;object-fit:cover;" />
-      <div style="padding:24px 24px 8px">
-        <h4 class="teal-text" style="margin:16px 0 10px;font-weight:400">AI Content Engine</h4>
-        <p style="color:#555;margin:0 0 20px;font-size:16px">
-          Production-ready platform for generating brand-consistent social media posts with AI — text via Claude, images via Gemini 2.5 Flash. Create a client profile once; generate instantly via API or web dashboard.
+  <div id="modal-ai-content" class="modal-overlay">
+    <div class="modal-window">
+      <div class="relative">
+        <img src="/assets/img/projects/ai_content_engine_thumbnail.jpg" alt="AI Content Engine"
+          class="w-full h-56 md:h-72 object-cover" />
+        <button class="modal-close absolute top-4 right-4 w-8 h-8 rounded-full bg-black/40 text-white flex items-center justify-center hover:bg-black/60 transition">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="p-6">
+        <h3 class="text-teal-700 text-xl font-medium mb-1">AI Content Engine</h3>
+        <p class="text-gray-600 leading-relaxed">
+          Production-ready platform for generating brand-consistent social media posts with AI — text via Claude, images
+          via Gemini 2.5 Flash. Create a client profile once; generate instantly via API or web dashboard.
         </p>
-        <div class="skill-pills">
+        <div class="flex flex-wrap gap-2 mt-4">
           <span class="skill-pill">Claude</span>
           <span class="skill-pill">Gemini 2.5 Flash</span>
           <span class="skill-pill">OpenRouter</span>
@@ -802,38 +786,44 @@
           <span class="skill-pill">Multi-tenant</span>
         </div>
       </div>
-    </div>
-    <div class="modal-footer" style="padding:16px 24px">
-      <a href="https://sl1nk.com/rzcbshd" target="_blank"
-        class="btn waves-effect waves-light teal" style="margin-right:8px">
-        <i class="fas fa-external-link left"></i>View Live
-      </a>
-      <a href="#!" class="modal-close btn-flat grey-text">Close</a>
+      <div class="px-6 pb-6 flex gap-3">
+        <a href="https://sl1nk.com/rzcbshd" target="_blank"
+          class="inline-block px-5 py-2 bg-teal-600 text-white rounded-lg hover:bg-teal-700 transition text-sm font-medium">
+          <i class="fas fa-external-link-alt mr-2"></i>View Live
+        </a>
+        <button class="modal-close inline-block px-5 py-2 text-gray-500 hover:text-gray-700 transition text-sm font-medium">Close</button>
+      </div>
     </div>
   </div>
 
   <!-- Joat Stores Modal -->
-  <div id="modal-joat-stores" class="modal modal-fixed-footer">
-    <div class="modal-content" style="padding:0">
-      <img src="/assets/img/ecomm_proj.png" alt="Joat Stores"
-        style="width:100%;display:block;max-height:380px;object-fit:cover;" />
-      <div style="padding:24px 24px 8px">
-        <h4 class="teal-text" style="margin:16px 0 4px;font-weight:400">Joat Stores</h4>
-        <p style="color:#888;font-size:13px;margin:0 0 14px;text-transform:uppercase;letter-spacing:.5px">Multi-Tenant Headless Commerce OS &mdash; African SMEs</p>
-        <p style="color:#555;margin:0 0 16px;font-size:15.5px;line-height:1.7">
-          A self-hosted SaaS commerce engine where each merchant gets an independent branded storefront on their own subdomain — all powered by a single Django backend with domain-based tenant resolution, queryset-level data isolation, and JWT tokens scoped per store.
+  <div id="modal-joat-stores" class="modal-overlay">
+    <div class="modal-window">
+      <div class="relative">
+        <img src="/assets/img/ecomm_proj.png" alt="Joat Stores" class="w-full h-56 md:h-72 object-cover" />
+        <button class="modal-close absolute top-4 right-4 w-8 h-8 rounded-full bg-black/40 text-white flex items-center justify-center hover:bg-black/60 transition">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="p-6">
+        <h3 class="text-teal-700 text-xl font-medium mb-1">Joat Stores</h3>
+        <p class="text-gray-500 text-xs uppercase tracking-wider mb-3">Multi-Tenant Headless Commerce OS &mdash; African SMEs</p>
+        <p class="text-gray-600 text-sm leading-relaxed">
+          A self-hosted SaaS commerce engine where each merchant gets an independent branded storefront on their own
+          subdomain — all powered by a single Django backend with domain-based tenant resolution, queryset-level data
+          isolation, and JWT tokens scoped per store.
         </p>
 
-        <p style="font-weight:600;color:#333;margin:0 0 8px;font-size:14px;text-transform:uppercase;letter-spacing:.4px">Verticals</p>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px 16px;margin-bottom:18px;font-size:14px;color:#555">
-          <div><i class="fas fa-store teal-text" style="margin-right:6px"></i><b>Retail</b> — product catalogs, variants, SKU &amp; inventory</div>
-          <div><i class="fas fa-utensils teal-text" style="margin-right:6px"></i><b>Restaurant</b> — tables, kitchen tickets, reservations</div>
-          <div><i class="fas fa-glass-cheers teal-text" style="margin-right:6px"></i><b>Bar</b> — tab management, split settlement</div>
-          <div><i class="fas fa-file-contract teal-text" style="margin-right:6px"></i><b>Contracting</b> — service booking, quotes, invoicing</div>
+        <p class="font-semibold text-gray-700 text-xs uppercase tracking-wider mt-5 mb-2">Verticals</p>
+        <div class="grid grid-cols-2 gap-2 text-sm text-gray-600 mb-4">
+          <div><i class="fas fa-store text-teal-600 mr-1"></i><b>Retail</b> — product catalogs, variants, SKU &amp; inventory</div>
+          <div><i class="fas fa-utensils text-teal-600 mr-1"></i><b>Restaurant</b> — tables, kitchen tickets, reservations</div>
+          <div><i class="fas fa-glass-cheers text-teal-600 mr-1"></i><b>Bar</b> — tab management, split settlement</div>
+          <div><i class="fas fa-file-contract text-teal-600 mr-1"></i><b>Contracting</b> — service booking, quotes, invoicing</div>
         </div>
 
-        <p style="font-weight:600;color:#333;margin:0 0 8px;font-size:14px;text-transform:uppercase;letter-spacing:.4px">Key Features</p>
-        <ul style="color:#555;font-size:14.5px;margin:0 0 18px;padding-left:20px;line-height:1.9">
+        <p class="font-semibold text-gray-700 text-xs uppercase tracking-wider mt-5 mb-2">Key Features</p>
+        <ul class="text-sm text-gray-600 space-y-1.5 ml-4 list-disc">
           <li>M-Pesa STK Push, C2B &amp; B2C via Daraja API — primary payment rail</li>
           <li>Redis-backed persistent cart with coupon engine &amp; webhook idempotency</li>
           <li>Full order lifecycle: created → confirmed → fulfilled → completed</li>
@@ -842,7 +832,7 @@
           <li>3-tier SaaS subscriptions (Basic / Growth / Pro) priced for African markets</li>
         </ul>
 
-        <div class="skill-pills">
+        <div class="flex flex-wrap gap-2 mt-4">
           <span class="skill-pill">Django 5.2</span>
           <span class="skill-pill">DRF</span>
           <span class="skill-pill">Next.js 16</span>
@@ -856,31 +846,37 @@
           <span class="skill-pill">JWT</span>
         </div>
       </div>
-    </div>
-    <div class="modal-footer" style="padding:16px 24px">
-      <span class="grey-text" style="font-size:13px;margin-right:16px"><i class="fas fa-rocket" style="margin-right:6px"></i>Live demo coming soon</span>
-      <a href="https://github.com/kafura0/joat_stores" target="_blank"
-        class="btn waves-effect waves-light blue-grey" style="margin-right:8px">
-        <i class="fab fa-github left"></i>View Source
-      </a>
-      <a href="#!" class="modal-close btn-flat grey-text">Close</a>
+      <div class="px-6 pb-6 flex items-center gap-3">
+        <span class="text-xs text-gray-400"><i class="fas fa-rocket mr-1"></i>Live demo coming soon</span>
+        <a href="https://github.com/kafura0/joat_stores" target="_blank"
+          class="inline-block px-5 py-2 bg-gray-500 text-white rounded-lg hover:bg-gray-600 transition text-sm font-medium">
+          <i class="fab fa-github mr-2"></i>View Source
+        </a>
+        <button class="modal-close inline-block px-5 py-2 text-gray-500 hover:text-gray-700 transition text-sm font-medium">Close</button>
+      </div>
     </div>
   </div>
 
   <!-- BI Platform Modal -->
-  <div id="modal-bi-platform" class="modal modal-fixed-footer">
-    <div class="modal-content" style="padding:0">
-      <img src="/assets/img/futuristic-wallpaper.jpg" alt="BI Platform"
-        style="width:100%;display:block;max-height:280px;object-fit:cover;" />
-      <div style="padding:24px 24px 8px">
-        <h4 class="teal-text" style="margin:16px 0 4px;font-weight:400">BI Platform</h4>
-        <p style="color:#888;font-size:13px;margin:0 0 14px;text-transform:uppercase;letter-spacing:.5px">AI-Powered Business Intelligence SaaS &mdash; Multi-Tenant</p>
-        <p style="color:#555;margin:0 0 16px;font-size:15.5px;line-height:1.7">
-          Production-grade SaaS where businesses upload CSV/Excel data, auto-generate dashboards, and query insights using natural language. Each organisation gets full data isolation via JWT-scoped tenant context — no cross-tenant data leakage by design.
+  <div id="modal-bi-platform" class="modal-overlay">
+    <div class="modal-window">
+      <div class="relative">
+        <img src="/assets/img/futuristic-wallpaper.jpg" alt="BI Platform" class="w-full h-56 md:h-72 object-cover" />
+        <button class="modal-close absolute top-4 right-4 w-8 h-8 rounded-full bg-black/40 text-white flex items-center justify-center hover:bg-black/60 transition">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="p-6">
+        <h3 class="text-teal-700 text-xl font-medium mb-1">BI Platform</h3>
+        <p class="text-gray-500 text-xs uppercase tracking-wider mb-3">AI-Powered Business Intelligence SaaS &mdash; Multi-Tenant</p>
+        <p class="text-gray-600 text-sm leading-relaxed">
+          Production-grade SaaS where businesses upload CSV/Excel data, auto-generate dashboards, and query insights
+          using natural language. Each organisation gets full data isolation via JWT-scoped tenant context — no
+          cross-tenant data leakage by design.
         </p>
 
-        <p style="font-weight:600;color:#333;margin:0 0 8px;font-size:14px;text-transform:uppercase;letter-spacing:.4px">Key Features</p>
-        <ul style="color:#555;font-size:14.5px;margin:0 0 18px;padding-left:20px;line-height:1.9">
+        <p class="font-semibold text-gray-700 text-xs uppercase tracking-wider mt-5 mb-2">Key Features</p>
+        <ul class="text-sm text-gray-600 space-y-1.5 ml-4 list-disc">
           <li>Upload CSV/Excel → dashboards auto-generated with computed widget data</li>
           <li>Natural-language AI queries — ask questions, get instant data insights</li>
           <li>AI forecasting service for trend and demand prediction</li>
@@ -891,12 +887,14 @@
           <li>Fully Dockerised — frontend, backend, and Postgres spin up together</li>
         </ul>
 
-        <p style="font-weight:600;color:#333;margin:0 0 8px;font-size:14px;text-transform:uppercase;letter-spacing:.4px">API Surface</p>
-        <p style="color:#555;font-size:14px;margin:0 0 18px;line-height:1.8">
-          Versioned REST API (<code>/api/v1/</code>) covering auth, datasets, dashboards, AI insights, and org usage analytics. Interactive docs at <code>/api/v1/docs</code>.
+        <p class="font-semibold text-gray-700 text-xs uppercase tracking-wider mt-5 mb-2">API Surface</p>
+        <p class="text-sm text-gray-600 leading-relaxed">
+          Versioned REST API (<code class="bg-gray-100 px-1 rounded text-xs">/api/v1/</code>) covering auth, datasets,
+          dashboards, AI insights, and org usage analytics. Interactive docs at
+          <code class="bg-gray-100 px-1 rounded text-xs">/api/v1/docs</code>.
         </p>
 
-        <div class="skill-pills">
+        <div class="flex flex-wrap gap-2 mt-4">
           <span class="skill-pill">FastAPI</span>
           <span class="skill-pill">Next.js 14</span>
           <span class="skill-pill">PostgreSQL</span>
@@ -909,30 +907,37 @@
           <span class="skill-pill">Multi-Tenant</span>
         </div>
       </div>
-    </div>
-    <div class="modal-footer" style="padding:16px 24px">
-      <a href="https://github.com/kafura0/BI_app" target="_blank"
-        class="btn waves-effect waves-light blue-grey" style="margin-right:8px">
-        <i class="fab fa-github left"></i>View Source
-      </a>
-      <a href="#!" class="modal-close btn-flat grey-text">Close</a>
+      <div class="px-6 pb-6 flex gap-3">
+        <a href="https://github.com/kafura0/BI_app" target="_blank"
+          class="inline-block px-5 py-2 bg-gray-500 text-white rounded-lg hover:bg-gray-600 transition text-sm font-medium">
+          <i class="fab fa-github mr-2"></i>View Source
+        </a>
+        <button class="modal-close inline-block px-5 py-2 text-gray-500 hover:text-gray-700 transition text-sm font-medium">Close</button>
+      </div>
     </div>
   </div>
 
-  <!-- n8n CMS & Social Automation Modal -->
-  <div id="modal-n8n" class="modal modal-fixed-footer">
-    <div class="modal-content" style="padding:0">
-      <img src="/assets/img/minimal-ai-wallpaper.jpg" alt="n8n CMS and Social Media Automation"
-        style="width:100%;display:block;max-height:280px;object-fit:cover;" />
-      <div style="padding:24px 24px 8px">
-        <h4 class="teal-text" style="margin:16px 0 4px;font-weight:400">n8n CMS &amp; Social Automation</h4>
-        <p style="color:#888;font-size:13px;margin:0 0 14px;text-transform:uppercase;letter-spacing:.5px">Multi-Tenant AI Automation Platform</p>
-        <p style="color:#555;margin:0 0 16px;font-size:15.5px;line-height:1.7">
-          Production-ready platform that lets businesses manage website content and social media by sending natural-language messages to a Telegram bot. An AI model parses intent and routes each request to the right workflow — CMS update, media upload, or social post — with full client isolation via multi-tenancy.
+  <!-- n8n CMS Modal -->
+  <div id="modal-n8n" class="modal-overlay">
+    <div class="modal-window">
+      <div class="relative">
+        <img src="/assets/img/minimal-ai-wallpaper.jpg" alt="n8n CMS and Social Media Automation"
+          class="w-full h-56 md:h-72 object-cover" />
+        <button class="modal-close absolute top-4 right-4 w-8 h-8 rounded-full bg-black/40 text-white flex items-center justify-center hover:bg-black/60 transition">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="p-6">
+        <h3 class="text-teal-700 text-xl font-medium mb-1">n8n CMS &amp; Social Automation</h3>
+        <p class="text-gray-500 text-xs uppercase tracking-wider mb-3">Multi-Tenant AI Automation Platform</p>
+        <p class="text-gray-600 text-sm leading-relaxed">
+          Production-ready platform that lets businesses manage website content and social media by sending
+          natural-language messages to a Telegram bot. An AI model parses intent and routes each request to the right
+          workflow — CMS update, media upload, or social post — with full client isolation via multi-tenancy.
         </p>
 
-        <p style="font-weight:600;color:#333;margin:0 0 8px;font-size:14px;text-transform:uppercase;letter-spacing:.4px">Key Features</p>
-        <ul style="color:#555;font-size:14.5px;margin:0 0 18px;padding-left:20px;line-height:1.9">
+        <p class="font-semibold text-gray-700 text-xs uppercase tracking-wider mt-5 mb-2">Key Features</p>
+        <ul class="text-sm text-gray-600 space-y-1.5 ml-4 list-disc">
           <li>Natural-language Telegram commands → structured CMS &amp; social actions via AI parsing</li>
           <li>Per-client feature flags, audit logging, and JSONB content storage</li>
           <li>Add/update products, menu items, services, and page sections without code</li>
@@ -941,7 +946,7 @@
           <li>Ready for Instagram Graph API; mock endpoints ship with the repo</li>
         </ul>
 
-        <div class="skill-pills">
+        <div class="flex flex-wrap gap-2 mt-4">
           <span class="skill-pill">n8n</span>
           <span class="skill-pill">Supabase</span>
           <span class="skill-pill">PostgreSQL</span>
@@ -951,55 +956,294 @@
           <span class="skill-pill">Multi-Tenant</span>
         </div>
       </div>
-    </div>
-    <div class="modal-footer" style="padding:16px 24px">
-      <a href="https://github.com/kafura0/n8n_CMS_SMA" target="_blank"
-        class="btn waves-effect waves-light blue-grey" style="margin-right:8px">
-        <i class="fab fa-github left"></i>View Source
-      </a>
-      <a href="#!" class="modal-close btn-flat grey-text">Close</a>
+      <div class="px-6 pb-6 flex gap-3">
+        <a href="https://github.com/kafura0/n8n_CMS_SMA" target="_blank"
+          class="inline-block px-5 py-2 bg-gray-500 text-white rounded-lg hover:bg-gray-600 transition text-sm font-medium">
+          <i class="fab fa-github mr-2"></i>View Source
+        </a>
+        <button class="modal-close inline-block px-5 py-2 text-gray-500 hover:text-gray-700 transition text-sm font-medium">Close</button>
+      </div>
     </div>
   </div>
 
-  <!-- typed.js -->
+  <!-- Student Attention Detection Modal -->
+  <div id="modal-attention" class="modal-overlay">
+    <div class="modal-window">
+      <div class="relative">
+        <img src="/assets/img/adas_drowsiness.jpg" alt="Student Attention Detection"
+          class="w-full h-56 md:h-72 object-cover" />
+        <button class="modal-close absolute top-4 right-4 w-8 h-8 rounded-full bg-black/40 text-white flex items-center justify-center hover:bg-black/60 transition">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="p-6">
+        <h3 class="text-teal-700 text-xl font-medium mb-3">Student Attention Detection</h3>
+        <p class="text-sm text-gray-600 mb-3"><b>Tools:</b> MediaPipe, OpenCV, Streamlit, Python</p>
+        <ul class="text-sm text-gray-600 space-y-1.5 ml-4 list-disc">
+          <li>Monitors 10+ faces simultaneously via webcam or uploaded video.</li>
+          <li>Tracks eye closure (fatigue), head gaze direction, and motion (fidgeting).</li>
+          <li>Live labels — Attentive, Drowsy, Looking Away — with CSV session export.</li>
+          <li>Deployed on Hugging Face Spaces.</li>
+        </ul>
+        <p class="font-semibold text-gray-700 text-xs uppercase tracking-wider mt-5 mb-2">Future Plans</p>
+        <ul class="text-sm text-gray-600 space-y-1.5 ml-4 list-disc">
+          <li>Facial recognition for per-student identity tracking across sessions.</li>
+          <li>Audio analysis to detect off-topic conversations.</li>
+          <li>Remote teacher dashboard with live session alerts.</li>
+          <li>LMS integration (Moodle, Google Classroom) for automated attendance logging.</li>
+        </ul>
+      </div>
+      <div class="px-6 pb-6 flex gap-3">
+        <a href="https://github.com/kafura0/attention-detection/" target="_blank"
+          class="inline-block px-5 py-2 bg-teal-600 text-white rounded-lg hover:bg-teal-700 transition text-sm font-medium">
+          <i class="fab fa-github mr-2"></i>View Source
+        </a>
+        <button class="modal-close inline-block px-5 py-2 text-gray-500 hover:text-gray-700 transition text-sm font-medium">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- NLP Classification Modal -->
+  <div id="modal-nlp" class="modal-overlay">
+    <div class="modal-window">
+      <div class="relative">
+        <img src="/assets/img/NLP-image-scaled.jpg" alt="NLP Text Classification"
+          class="w-full h-56 md:h-72 object-cover" />
+        <button class="modal-close absolute top-4 right-4 w-8 h-8 rounded-full bg-black/40 text-white flex items-center justify-center hover:bg-black/60 transition">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="p-6">
+        <h3 class="text-teal-700 text-xl font-medium mb-3">NLP Text Classification</h3>
+        <p class="text-sm text-gray-600 mb-3"><b>Tools:</b> Python, scikit-learn, NLTK, TF-IDF</p>
+        <ul class="text-sm text-gray-600 space-y-1.5 ml-4 list-disc">
+          <li>5 categories: computing, hockey, sales, cryptography, politics.</li>
+          <li>Baseline MultinomialNB classifier; improved via stopword removal, stemming, and custom feature engineering
+            (price detection, sentence counts).</li>
+          <li>Final pipeline evaluated on held-out data with confusion matrix analysis.</li>
+        </ul>
+        <p class="font-semibold text-gray-700 text-xs uppercase tracking-wider mt-5 mb-2">Future Plans</p>
+        <ul class="text-sm text-gray-600 space-y-1.5 ml-4 list-disc">
+          <li>Replace TF-IDF with BERT embeddings for context-aware classification.</li>
+          <li>Expand to all 20 newsgroup categories with multi-label support.</li>
+          <li>Wrap the model in a REST API for real-time post classification.</li>
+          <li>Add an interactive demo UI for live text input and predictions.</li>
+        </ul>
+      </div>
+      <div class="px-6 pb-6 flex gap-3">
+        <a href="https://github.com/kafura0/dsc-nlp-lab" target="_blank"
+          class="inline-block px-5 py-2 bg-teal-600 text-white rounded-lg hover:bg-teal-700 transition text-sm font-medium">
+          <i class="fab fa-github mr-2"></i>View Source
+        </a>
+        <button class="modal-close inline-block px-5 py-2 text-gray-500 hover:text-gray-700 transition text-sm font-medium">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cert Modals -->
+
+  <div id="modal-cert-cv" class="modal-overlay">
+    <div class="modal-window max-w-sm">
+      <div class="p-6">
+        <h3 class="text-teal-700 text-xl font-medium mb-3">Computer Vision in Python</h3>
+        <p class="text-sm text-gray-600"><b>Tools:</b> OpenCV, Keras, TensorFlow, Artificial Neural Networks</p>
+        <ul class="text-sm text-gray-600 space-y-1.5 ml-4 list-disc mt-3">
+          <li>Object and lane detection</li>
+          <li>Traffic sign classification for self-driving cars</li>
+        </ul>
+      </div>
+      <div class="px-6 pb-6">
+        <button class="modal-close inline-block px-5 py-2 text-gray-500 hover:text-gray-700 transition text-sm font-medium">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal-cert-ml" class="modal-overlay">
+    <div class="modal-window max-w-sm">
+      <div class="p-6">
+        <h3 class="text-teal-700 text-xl font-medium mb-3">Machine Learning A-Z</h3>
+        <p class="text-sm text-gray-600"><b>Tools:</b> Python, R, scikit-learn, NumPy, Pandas</p>
+        <ul class="text-sm text-gray-600 space-y-1.5 ml-4 list-disc mt-3">
+          <li>Covered supervised and unsupervised ML algorithms including regression, classification, clustering, and dimensionality reduction.</li>
+          <li>Implemented models in both Python and R with hands-on practical exercises.</li>
+        </ul>
+      </div>
+      <div class="px-6 pb-6">
+        <button class="modal-close inline-block px-5 py-2 text-gray-500 hover:text-gray-700 transition text-sm font-medium">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal-cert-django" class="modal-overlay">
+    <div class="modal-window max-w-sm">
+      <div class="p-6">
+        <h3 class="text-teal-700 text-xl font-medium mb-3">Python and Django Full Stack Developer</h3>
+        <p class="text-sm text-gray-600"><b>Tools:</b> HTML, CSS, Bootstrap, Django, Flask, SQLAlchemy, PostgreSQL, Python</p>
+        <ul class="text-sm text-gray-600 space-y-1.5 ml-4 list-disc mt-3">
+          <li>Built a blog platform where users can view posts and contact the admin.</li>
+          <li>Admin can add, update and delete posts.</li>
+        </ul>
+      </div>
+      <div class="px-6 pb-6">
+        <button class="modal-close inline-block px-5 py-2 text-gray-500 hover:text-gray-700 transition text-sm font-medium">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Scripts ===== -->
   <script src="assets/vendor/typed.js/typed.min.js"></script>
-  <script type="text/javascript">
-    var typed = new Typed('.typing', {
-      strings: ["Backend Developer", "ML Engineer", "Data Scientist", "Problem Solver"],
-      loop: true,
-      typeSpeed: 80,
-      backSpeed: 40
-    });
-  </script>
-
-  <!-- jQuery -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-
-  <!-- Materialize - Compiled and minified JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/js/materialize.min.js"></script>
-
-  <!-- AOS - Animate On Scroll -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
   <script>
-    // Materialize initializers
-    $(document).ready(function () {
-      $(".scrollspy").scrollSpy();
-      $(".button-collapse").sideNav({
-        menuWidth: 190,
-        edge: "left",
-        closeOnClick: true
-      });
-      $(".modal").modal();
-    });
+    (function () {
+      'use strict';
 
-    // AOS
-    AOS.init({
-      duration: 600,
-      once: true,
-      offset: 80
-    });
+      // ---- Typed.js ----
+      new Typed('.typing', {
+        strings: ["Backend Developer", "ML Engineer", "Data Scientist", "Problem Solver"],
+        loop: true,
+        typeSpeed: 80,
+        backSpeed: 40
+      });
+
+      // ---- AOS ----
+      AOS.init({ duration: 600, once: true, offset: 80 });
+
+      // ---- Dark Mode ----
+      const darkToggle = document.getElementById('darkToggle');
+      const icon = darkToggle.querySelector('i');
+      const prefersDark = localStorage.getItem('dark') === 'true';
+
+      function applyDark(dark) {
+        document.documentElement.classList.toggle('dark', dark);
+        document.body.classList.toggle('dark', dark);
+        icon.className = dark ? 'fas fa-sun' : 'fas fa-moon';
+        localStorage.setItem('dark', dark);
+      }
+
+      applyDark(prefersDark);
+
+      darkToggle.addEventListener('click', function () {
+        applyDark(!document.body.classList.contains('dark'));
+      });
+
+      // ---- Modals ----
+      const modalTriggers = document.querySelectorAll('.modal-trigger');
+      const modalCloseButtons = document.querySelectorAll('.modal-close');
+
+      function openModal(id) {
+        const modal = document.getElementById(id);
+        if (modal) {
+          modal.classList.add('open');
+          document.body.style.overflow = 'hidden';
+        }
+      }
+
+      function closeAllModals() {
+        document.querySelectorAll('.modal-overlay.open').forEach(function (m) {
+          m.classList.remove('open');
+        });
+        document.body.style.overflow = '';
+      }
+
+      modalTriggers.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          openModal(this.dataset.modal);
+        });
+      });
+
+      modalCloseButtons.forEach(function (btn) {
+        btn.addEventListener('click', closeAllModals);
+      });
+
+      // Close modal on overlay click
+      document.querySelectorAll('.modal-overlay').forEach(function (overlay) {
+        overlay.addEventListener('click', function (e) {
+          if (e.target === this) closeAllModals();
+        });
+      });
+
+      // Close modal on Escape
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closeAllModals();
+      });
+
+      // ---- Scrollspy (Intersection Observer) ----
+      const navLinks = document.querySelectorAll('.nav-link, .mobile-link');
+      const sections = document.querySelectorAll('section[id]');
+
+      const observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            navLinks.forEach(function (link) {
+              link.classList.remove('active', 'font-bold');
+              if (link.getAttribute('href') === '#' + entry.target.id) {
+                link.classList.add('active', 'font-bold');
+              }
+            });
+          }
+        });
+      }, { rootMargin: '-30% 0px -60% 0px' });
+
+      sections.forEach(function (section) { observer.observe(section); });
+
+      // ---- Mobile Menu ----
+      const menuToggle = document.getElementById('menuToggle');
+      const menuClose = document.getElementById('menuClose');
+      const mobileMenu = document.getElementById('mobileMenu');
+      const menuOverlay = document.getElementById('menuOverlay');
+
+      function openMobileMenu() {
+        mobileMenu.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeMobileMenu() {
+        mobileMenu.classList.add('hidden');
+        document.body.style.overflow = '';
+      }
+
+      if (menuToggle) menuToggle.addEventListener('click', openMobileMenu);
+      if (menuClose) menuClose.addEventListener('click', closeMobileMenu);
+      if (menuOverlay) menuOverlay.addEventListener('click', closeMobileMenu);
+
+      // Close mobile menu on nav link click
+      document.querySelectorAll('.mobile-link').forEach(function (link) {
+        link.addEventListener('click', closeMobileMenu);
+      });
+
+      // ---- Project Filtering ----
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      const projectCards = document.querySelectorAll('.project-card');
+
+      filterBtns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          filterBtns.forEach(function (b) { b.classList.remove('active'); });
+          this.classList.add('active');
+
+          const filter = this.dataset.filter;
+
+          projectCards.forEach(function (card) {
+            if (filter === 'all') {
+              card.classList.remove('hidden-card');
+            } else {
+              const tags = (card.dataset.tags || '').split(',');
+              if (tags.includes(filter)) {
+                card.classList.remove('hidden-card');
+              } else {
+                card.classList.add('hidden-card');
+              }
+            }
+          });
+        });
+      });
+
+      // ---- Body loaded class for entry animation ----
+      setTimeout(function () { document.body.classList.add('loaded'); }, 100);
+
+    })();
   </script>
+
 </body>
 
 </html>

@@ -5,7 +5,7 @@ How it works:
   1. Fetches all repos (public + private) for the authenticated user.
   2. Filters for repos with the GitHub topic "portfolio".
   3. For each repo, downloads preview.png (or preview.jpg) from the repo root.
-  4. Generates a Materialize card HTML block for each repo.
+  4. Generates a Tailwind CSS card HTML block for each repo.
   5. Injects all cards between the <!-- PROJECTS:AUTO:START --> and
      <!-- PROJECTS:AUTO:END --> markers in index.html.
 
@@ -137,7 +137,7 @@ def build_card(repo, index):
 
     # Tech pills (up to 8 topics)
     tech_pills = "".join(
-        f'<span class="skill-pill" style="font-size:12px;padding:4px 12px;">{t}</span>'
+        f'<span class="skill-pill">{t}</span>'
         for t in topics[:8]
     )
 
@@ -145,39 +145,32 @@ def build_card(repo, index):
     demo_btn = ""
     if homepage:
         demo_btn = f"""\
-                  <a aria-label="View live demo" href="{homepage}" target="_blank"
-                    data-position="top" data-tooltip="Live Demo"
-                    class="btn-floating btn-large waves-effect waves-light teal tooltipped">
-                    <i class="fas fa-external-link-alt"></i></a>"""
+              <a href="{homepage}" target="_blank"
+                class="w-10 h-10 rounded-full bg-teal-600 text-white flex items-center justify-center hover:bg-teal-700 transition"
+                aria-label="View live demo">
+                <i class="fas fa-external-link-alt text-sm"></i>
+              </a>"""
 
     # GitHub button — shown for all repos; private repos will need auth to view
     github_btn = f"""\
-                  <a aria-label="View source on GitHub" href="{html_url}" target="_blank"
-                    data-position="top" data-tooltip="{'Private Repo' if is_private else 'View Source'}"
-                    class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped">
-                    <i class="fab fa-github"></i></a>"""
+              <a href="{html_url}" target="_blank"
+                class="w-10 h-10 rounded-full bg-gray-500 text-white flex items-center justify-center hover:bg-gray-600 transition"
+                aria-label="{'Private Repo' if is_private else 'View source on GitHub'}">
+                <i class="fab fa-github"></i>
+              </a>"""
 
     card = f"""\
-          <div class="col s12 m6 l4" data-aos="fade-up" data-aos-delay="{aos_delay}">
-            <div class="card medium">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img alt="{title}" src="{img_path}"
-                  style="height:100%;width:100%;object-fit:cover;" class="activator" />
-              </div>
-              <div class="card-content">
-                <span class="card-title activator teal-text hoverline">{title}<i
-                    class="mdi-navigation-more-vert right"></i></span>
-                <p>{description}</p>
-              </div>
-              <div class="card-reveal">
-                <span class="card-title teal-text"><small>Details</small><i
-                    class="mdi-navigation-close right"></i></span>
-                <div class="skill-pills" style="margin-bottom:12px;">{tech_pills}</div>
-                <div class="card-action">
-                  {demo_btn}
-                  {github_btn}
-                </div>
-              </div>
+          <div class="project-card bg-white rounded-xl shadow-md overflow-hidden border border-gray-200"
+            data-aos="fade-up" data-aos-delay="{aos_delay}"
+            data-tags="{','.join(topics[:5])}">
+            <img src="{img_path}" alt="{title}" class="h-48 w-full object-cover" />
+            <div class="p-5">
+              <h4 class="text-teal-700 font-semibold text-lg">{title}</h4>
+              <p class="text-gray-600 text-sm mt-2 leading-relaxed">{description}</p>
+            </div>
+            <div class="px-5 pb-5 flex gap-2">
+              {demo_btn}
+              {github_btn}
             </div>
           </div>"""
     return card

@@ -9,13 +9,13 @@ for the base site.
 | Layer       | Technology                          |
 |-------------|-------------------------------------|
 | Hosting     | GitHub Pages                        |
-| CSS framework | Materialize CSS 0.95.3            |
+| CSS framework | Tailwind CSS (CDN Play)           |
 | Icons       | Font Awesome 6.4.0                  |
 | Animations  | AOS (Animate On Scroll) 2.3.1       |
 | Typing FX   | Typed.js (vendored)                 |
-| jQuery      | 3.7.1 (required by Materialize)     |
-| Analytics   | Google Analytics + Google Tag Manager |
+| Analytics   | Google Tag Manager + GA4             |
 | Auto-update | GitHub Actions + Python script      |
+| Dark mode   | CSS custom properties + localStorage |
 
 ## File Structure
 
@@ -51,7 +51,7 @@ every push to `main`. It calls `scripts/update_projects.py`, which:
 3. Filters for repos with the GitHub topic **`portfolio`**.
 4. For each matching repo, downloads `preview.png` (or `preview.jpg`) from the repo root
    and saves it to `assets/img/projects/{repo-name}.png`.
-5. Generates a Materialize card for each repo using the repo's name, description, topics
+5. Generates a Tailwind CSS card for each repo using the repo's name, description, topics
    (as tech pills), and `homepage` field (as the demo link).
 6. Injects the generated cards between the markers in `index.html`:
    ```html
@@ -102,26 +102,41 @@ Go to this repo → Actions → "Auto-Update Projects" → Run workflow.
 
 ### Add a new manual project card
 
-Copy an existing card block inside `#projects` (below the `<!-- PROJECTS:AUTO:END -->` 
-marker) and update the image, title, description, and links.
+Copy an existing `.project-card` div inside `#projects .grid` (below the 
+`<!-- PROJECTS:AUTO:END -->` marker) and update the image, title, description, 
+and links. Make sure `data-tags` includes relevant tech tags for filtering.
 
 ### Add a skill pill
 
-Find the relevant `<div class="skill-group">` in `#skills` and add:
+Find the relevant skill group in `#skills` and add:
 ```html
 <span class="skill-pill">Your Skill</span>
 ```
 
 ### Change the hero gradient
 
-In `assets/css/style.css`, find `#intro.section` and edit the `background` property.
+In `assets/css/style.css`, find `#intro` and edit the `background` property.
 
 ### Change the typing strings
 
-In `index.html`, find the `Typed` initialiser near the bottom:
+In `index.html`, find the `Typed` initialiser near the bottom of the `<script>`:
 ```js
 strings: ["Backend Developer", "ML Engineer", "Data Scientist", "Problem Solver"],
 ```
+
+### Add a filter button for project filtering
+
+In the `#filters` div inside `#projects`, add:
+```html
+<button class="filter-btn" data-filter="your-tag">Your Tag</button>
+```
+Matching project cards need `data-tags="your-tag"` to appear when this filter is active.
+
+### Dark mode
+
+The dark mode toggle saves preference to `localStorage` under the key `"dark"`.
+Dark mode styles use the `.dark` class on `<body>` and `<html>`. Add dark variants
+for new elements in `style.css` using `.dark .your-class {...}`.
 
 ## Common Issues
 
