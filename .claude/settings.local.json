@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -m http.server 8080)",
+      "Bash(gh api *)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "WebFetch(domain:github.com)",
+      "Bash(gh repo *)",
+      "Bash(start *)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(python *)",
+      "Bash(git push *)"
+    ]
+  }
+}
