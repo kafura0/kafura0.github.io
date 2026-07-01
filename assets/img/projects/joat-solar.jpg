@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>JOAT Kenya | Software, Digital Marketing, Media & AI Studio</title>
+    <meta
+      name="description"
+      content="JOAT Kenya is a digital innovation studio. We build software, run AI marketing, produce media and launch in-house products (BioBiz, Majobo) worldwide."
+    />
+    <meta
+      name="keywords"
+      content="JOAT Kenya, J.O.A.T. Kenya, digital innovation studio, software development, mobile app development, web development, digital marketing, AI solutions, media production, animation studio, children's digital education, BioBiz, Majobo Kenya"
+    />
+    <meta name="author" content="JOAT KENYA" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#f7f5f0" />
+    <link rel="canonical" href="https://joatkenya.com/" />
+    <link rel="icon" type="image/png" href="/joat-logo.png" />
+    <link rel="apple-touch-icon" href="/joat-logo.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- OpenSearch descriptor — lets Chrome / Firefox / Edge / Brave offer
+         joatkenya.com as a search engine the user can add to the URL bar. -->
+    <link rel="search" type="application/opensearchdescription+xml" title="JOAT Kenya" href="/opensearch.xml" />
+
+    <!-- Webmaster verification slots. Each one is dormant until you paste the
+         token from that engine's webmaster console. Once added, the site is
+         claimed and your sitemap is accepted there.
+
+         How to claim each (one-time setup, ~5 min per engine):
+           Bing  Webmaster Tools  →  https://www.bing.com/webmasters     (covers ChatGPT Search, Perplexity, You.com, DuckDuckGo, Copilot)
+           Yandex Webmaster       →  https://webmaster.yandex.com         (covers Russia, CIS, Turkey, parts of Eastern Europe)
+           Naver Search Advisor   →  https://searchadvisor.naver.com      (covers South Korea)
+           Baidu Webmaster        →  https://ziyuan.baidu.com             (covers Mainland China — only if targeting)
+
+         Replace the placeholder content="" once you have each token. -->
+    <meta name="msvalidate.01" content="" />
+    <meta name="yandex-verification" content="" />
+    <meta name="naver-site-verification" content="" />
+    <meta name="google-site-verification" content="" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="JOAT Kenya | Software, Digital Marketing, Media & AI Studio" />
+    <meta
+      property="og:description"
+      content="JOAT Kenya is a digital innovation studio. We build software, run AI marketing, produce media and launch in-house products (BioBiz, Majobo) worldwide."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="J.O.A.T. Kenya" />
+    <meta property="og:url" content="https://joatkenya.com/" />
+    <meta property="og:image" content="https://joatkenya.com/joat-logo.png" />
+    <meta property="og:locale" content="en_KE" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="JOAT Kenya | Software, Digital Marketing, Media & AI Studio" />
+    <meta
+      name="twitter:description"
+      content="JOAT Kenya is a digital innovation studio. We build software, run AI marketing, produce media and launch in-house products (BioBiz, Majobo) worldwide."
+    />
+    <meta name="twitter:image" content="https://joatkenya.com/joat-logo.png" />
+
+    <!-- Preload the logo (LCP candidate above the fold) and warm font origin
+         connections so the fetches start in parallel with HTML parsing. -->
+    <link rel="preload" as="image" href="/joat-logo.png" fetchpriority="high" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Non-blocking Google Fonts via the print-swap trick: fetched as a
+         low-priority stylesheet (media="print") and promoted to media="all"
+         once loaded. Result: the stylesheet doesn't block first paint. -->
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700;800&display=swap"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700;800&display=swap"
+      />
+    </noscript>
+
+    <!-- Analytics & heatmaps deferred to the `load` event — they no longer
+         compete with the critical render path. GA4 (G-XBWFZR7M3V) and
+         Microsoft Clarity (x18d98fzqg) still fire automatically for SPA route
+         changes; only their initial load is delayed.
+
+         The shim below buffers any gtag()/clarity() calls that fire BEFORE
+         the real scripts are loaded so no events are lost during the window
+         between first paint and the deferred load. -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = window.gtag || function(){ dataLayer.push(arguments); };
+      gtag('js', new Date());
+      gtag('config', 'G-XBWFZR7M3V', { anonymize_ip: true });
+      window.clarity = window.clarity || function(){ (clarity.q = clarity.q || []).push(arguments); };
+
+      function loadAnalytics() {
+        // GA4 gtag.js
+        var ga = document.createElement('script');
+        ga.async = true;
+        ga.src = 'https://www.googletagmanager.com/gtag/js?id=G-XBWFZR7M3V';
+        document.head.appendChild(ga);
+
+        // Microsoft Clarity
+        var cl = document.createElement('script');
+        cl.async = true;
+        cl.src = 'https://www.clarity.ms/tag/x18d98fzqg';
+        document.head.appendChild(cl);
+      }
+
+      if (document.readyState === 'complete') {
+        setTimeout(loadAnalytics, 1500);
+      } else {
+        window.addEventListener('load', function () { setTimeout(loadAnalytics, 1500); });
+      }
+    </script>
+    <script type="module" crossorigin src="/assets/index-JVRvTr-x.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-DCJdklZJ.css">
+  </head>
+  <body>
+    <div id="root"><section id="home" class="relative pt-32 lg:pt-44 pb-20 lg:pb-28 overflow-hidden"><div class="absolute inset-0 bg-center bg-cover" style="background-image:url(&#x27;/hero-bg.jpg&#x27;)" aria-hidden="true"></div><div class="absolute inset-0" style="background:oklch(0.975 0.01 85 / 0.25)" aria-hidden="true"></div><div class="relative max-w-4xl mx-auto px-5 lg:px-8 text-center"><div class="inline-flex items-center gap-2 rounded-full border border-(--border) bg-card px-4 py-1.5 text-xs font-medium text-gold mb-6">Digital Innovation Studio</div><h1 class="text-4xl sm:text-5xl lg:text-7xl font-bold leading-[1.05] text-foreground">Transforming Ideas into <span class="text-(--joat-red)">Digital Reality</span></h1><p class="mt-5 text-lg lg:text-2xl font-semibold text-foreground/90">Software, AI, Media &amp; Digital Marketing, built in-house by J.O.A.T. Kenya.</p><p class="mt-4 text-base lg:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">We deliver software development, AI solutions, media production and digital marketing that drive real growth for businesses across Kenya and beyond.</p><div class="mt-8 flex flex-wrap justify-center gap-3"><a href="#contact" class="group inline-flex items-center gap-2 px-6 py-3 rounded-md bg-(--joat-red) text-primary-foreground font-semibold hover:brightness-110 transition-all">Start Your Project<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a><a href="#services" class="inline-flex items-center gap-2 px-6 py-3 rounded-md border border-(--border) bg-card text-foreground font-semibold hover:border-(--joat-red)/40 transition-all">Explore Services</a></div><div class="mt-14 grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-3xl mx-auto"><div><div class="text-3xl lg:text-4xl font-bold text-foreground">42+</div><div class="mt-1 text-sm text-muted-foreground">Years in business</div></div><div><div class="text-3xl lg:text-4xl font-bold text-foreground">5</div><div class="mt-1 text-sm text-muted-foreground">Service lines</div></div><div><div class="text-3xl lg:text-4xl font-bold text-foreground">3</div><div class="mt-1 text-sm text-muted-foreground">In-house products</div></div><div><div class="text-3xl lg:text-4xl font-bold text-foreground">100%</div><div class="mt-1 text-sm text-muted-foreground">Delivered in-house</div></div></div></div></section><div hidden><h2>Main sections</h2>
+      <ul>
+        <li><a href="/about">About JOAT Kenya</a></li>
+        <li><a href="/services">Services: software, marketing, AI, animation, children's education</a></li>
+        <li><a href="/products">Products: BioBiz, Majobo Kenya, Amare's Big Planet</a></li>
+        <li><a href="/articles">Insights and articles</a></li>
+        <li><a href="/work-with-us">Work with us: engagement packages</a></li>
+        <li><a href="/careers">Careers</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+      <h2>Get in touch</h2>
+      <p>
+        Email: <a href="mailto:joatkenya120@gmail.com">joatkenya120@gmail.com</a><br />
+        Phone: <a href="tel:+254142378150">+254 142 378 150</a><br />
+        Address: The Brick Mall, 2nd Floor, Kiambu Road, Thindigua, Kiambu, Kenya
+      </p>
+      <noscript>
+        <p>
+          <strong>JavaScript is required for the full interactive site.</strong>
+          The links above will still take you to each section's full page, where
+          you can read the content directly. You can also reach us by email or phone above.
+        </p>
+      </noscript>
+    </div></div>
+  </body>
+</html>
