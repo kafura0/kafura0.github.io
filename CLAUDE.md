@@ -1,8 +1,7 @@
 # kafura0.github.io — Portfolio Website
 
 Joan Njoroge's personal portfolio. Static GitHub Pages site (single `index.html`) styled
-with Materialize CSS 0.95.3 and a custom `assets/css/style.css`. No build step required
-for the base site.
+with Tailwind CSS and custom `assets/css/style.css`. No build step required.
 
 ## Stack
 
